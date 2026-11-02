@@ -330,6 +330,20 @@
         showToast(`🎉 Đã đăng ký nhận bản tin Mẹo AI cho ${email}!`);
       });
     }
+
+    if (!document.getElementById("floatingBackToTopBtn")) {
+      const floatBtn = document.createElement("button");
+      floatBtn.type = "button";
+      floatBtn.id = "floatingBackToTopBtn";
+      floatBtn.className = "floating-top-btn";
+      floatBtn.setAttribute("aria-label", "Cuộn lên đầu trang");
+      floatBtn.setAttribute("title", "Lên đầu trang");
+      floatBtn.innerHTML = "↑";
+      floatBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      document.body.appendChild(floatBtn);
+    }
   }
 
   function updateBookmarkBadge() {
@@ -2242,8 +2256,10 @@
   // ==========================================================================
   function initEvents() {
     const navbar = document.getElementById("siteNavbar");
+    const floatTopBtn = document.getElementById("floatingBackToTopBtn");
     window.addEventListener("scroll", () => {
       if (navbar) navbar.classList.toggle("scrolled", window.scrollY > 16);
+      if (floatTopBtn) floatTopBtn.classList.toggle("visible", window.scrollY > 240);
     });
 
     const intentInput = document.getElementById("intentInput");
