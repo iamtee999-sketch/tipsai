@@ -200,6 +200,405 @@ Viết 3 kịch bản video ngắn 45 giây giới thiệu tính năng tự đ�
           <li>Lưu các câu trả lời quan trọng thành <strong>Note</strong>, sau đó chọn tất cả Note để yêu cầu AI tổng hợp thành Đề cương ôn tập hoặc Báo cáo tổng kết.</li>
         </ul>
       `
+    },
+    {
+      id: "post-6",
+      title: "Toàn tập ChatGPT (GPT-4o / o3): Giới thiệu sức mạnh, Cách dùng thực chiến & Bảng phím tắt cơ bản",
+      slug: "toan-tap-chatgpt-gioi-thieu-va-phim-tat-co-ban",
+      category: "tool-review",
+      categoryLabel: "Đánh giá AI Tools",
+      author: "Minh Quân (iTee360)",
+      authorRole: "AI Solutions Architect",
+      date: "02/11/2026",
+      readTime: "7 phút đọc",
+      views: 3180,
+      likes: 276,
+      featured: false,
+      coverImage: "assets/covers/post-6.svg",
+      coverStyle: "linear-gradient(135deg, #052E16 0%, #065F46 50%, #0284C7 100%)",
+      coverBadge: "CẨM NANG CHATGPT",
+      excerpt: "Tổng quan hệ sinh thái ChatGPT từ mô hình đa phương thức GPT-4o đến mô hình suy luận sâu o3, kèm trọn bộ phím tắt giúp bạn thao tác nhanh gấp đôi trên Web & Desktop App.",
+      tags: ["ChatGPT", "Phím tắt", "GPT-4o", "Hướng dẫn AI"],
+      content: `
+        <h3>1. Giới thiệu tổng quan về ChatGPT & Khi nào nên dùng?</h3>
+        <p><strong>ChatGPT</strong> (phát triển bởi OpenAI) là trợ lý AI đa năng phổ biến nhất hiện nay. Điểm mạnh lớn nhất của ChatGPT nằm ở sự kết hợp liền mạch giữa 4 khả năng trong cùng một giao diện: <strong>Trò chuyện đa phương thức (GPT-4o)</strong>, <strong>Suy luận logic chuyên sâu (dòng mô hình o1/o3)</strong>, <strong>Biên tập trực quan với Canvas</strong> và <strong>Tạo ảnh tích hợp có chữ chính xác</strong>.</p>
+        <ul>
+          <li><strong>Dùng GPT-4o khi:</strong> Cần viết lách hàng ngày, dịch thuật, phân tích file Excel/CSV, đọc ảnh chụp màn hình hoặc trò chuyện giọng nói thời gian thực (Advanced Voice Mode).</li>
+          <li><strong>Dùng mô hình o3 / Reasoning khi:</strong> Giải bài toán phức tạp, thiết kế kiến trúc phần mềm, lập kế hoạch chiến lược nhiều ràng buộc hoặc tìm bug khó.</li>
+          <li><strong>Dùng chế độ Canvas khi:</strong> Cần viết bài dài hoặc sửa code mà chỉ muốn bôi đen từng đoạn nhỏ để AI viết lại thay vì sinh lại từ đầu.</li>
+        </ul>
+
+        <h3>2. Bảng Phím tắt cơ bản trên ChatGPT (Windows &amp; macOS)</h3>
+        <p>Nắm vững 6 tổ hợp phím dưới đây giúp bạn không bao giờ phải rời tay khỏi bàn phím khi làm việc với ChatGPT:</p>
+        <ul>
+          <li><strong>Mở cửa sổ ChatGPT Companion nổi ở mọi màn hình (Desktop App):</strong> Nhấn <code>Alt + Space</code> (Windows) hoặc <code>⌥ Option + Space</code> (macOS).</li>
+          <li><strong>Mở cuộc trò chuyện mới (New Chat):</strong> Nhấn <code>Ctrl + Shift + O</code> (Windows) hoặc <code>⌘ Cmd + Shift + O</code> (macOS).</li>
+          <li><strong>Sao chép nhanh khối Code cuối cùng:</strong> Nhấn <code>Ctrl + Shift + ;</code> (Windows) hoặc <code>⌘ Cmd + Shift + ;</code> (macOS).</li>
+          <li><strong>Sao chép toàn bộ câu trả lời cuối của AI (chuẩn Markdown):</strong> Nhấn <code>Ctrl + Shift + C</code> (Windows) hoặc <code>⌘ Cmd + Shift + C</code> (macOS).</li>
+          <li><strong>Tìm kiếm nhanh trong toàn bộ lịch sử chat:</strong> Nhấn <code>Ctrl + K</code> (Windows) hoặc <code>⌘ Cmd + K</code> (macOS).</li>
+          <li><strong>Ẩn/Hiện thanh lịch sử Sidebar bên trái:</strong> Nhấn <code>Ctrl + Shift + S</code> (Windows) hoặc <code>⌘ Cmd + Shift + S</code> (macOS).</li>
+        </ul>
+
+        <blockquote>
+          💡 <strong>Mẹo vàng:</strong> Mỗi khi chuyển sang một chủ đề công việc mới, hãy bấm ngay <code>Ctrl + Shift + O</code> để mở phiên chat mới, giúp AI không bị nhiễu bởi ngữ cảnh của cuộc trò chuyện cũ.
+        </blockquote>
+
+        <h3>3. Mẫu thiết lập Custom Instructions chuẩn cho ChatGPT</h3>
+        <pre><code>Về tôi:
+- Tôi làm việc trong lĩnh vực Công nghệ / Marketing tại Việt Nam.
+- Tôi ưu tiên các giải pháp thực tế, có ví dụ minh họa cụ thể và số liệu rõ ràng.
+
+Cách ChatGPT nên trả lời:
+1. Đi thẳng vào câu trả lời ngay dòng đầu tiên, không mở bài sáo rỗng.
+2. Trình bày bằng danh sách gạch đầu dòng hoặc bảng so sánh khi có từ 3 ý trở lên.
+3. Nếu yêu cầu của tôi chưa đủ thông tin, hãy hỏi lại 3 câu ngắn gọn trước khi thực thi.</code></pre>
+      `
+    },
+    {
+      id: "post-7",
+      title: "Làm chủ Claude AI từ A–Z: Nghệ thuật viết lách tự nhiên, Artifacts & Hệ thống phím tắt cơ bản",
+      slug: "lam-chu-claude-ai-tu-a-z-va-phim-tat-co-ban",
+      category: "tool-review",
+      categoryLabel: "Đánh giá AI Tools",
+      author: "Minh Quân (iTee360)",
+      authorRole: "AI Solutions Architect",
+      date: "02/11/2026",
+      readTime: "7 phút đọc",
+      views: 2940,
+      likes: 268,
+      featured: false,
+      coverImage: "assets/covers/post-7.svg",
+      coverStyle: "linear-gradient(135deg, #431407 0%, #7C2D12 55%, #6D28D9 100%)",
+      coverBadge: "CẨM NANG CLAUDE",
+      excerpt: "Vì sao giới viết lách chuyên nghiệp và kỹ sư phần mềm lại mê mẩn Claude của Anthropic? Khám phá tính năng Artifacts, Projects và bảng phím tắt thao tác nhanh.",
+      tags: ["Claude", "Anthropic", "Artifacts", "Phím tắt"],
+      content: `
+        <h3>1. Claude AI là gì &amp; Vì sao được mệnh danh là "Vua viết lách và Code"?</h3>
+        <p><strong>Claude</strong> (do Anthropic phát triển) nổi bật với khả năng hiểu sắc thái ngôn ngữ tiếng Việt cực kỳ tự nhiên, không bị cứng nhắc kiểu văn dịch máy. Bên cạnh đó, các mô hình <strong>Claude Sonnet &amp; Opus</strong> hiện là tiêu chuẩn vàng trong việc viết code giao diện sạch đẹp và phân tích tài liệu phức tạp.</p>
+        <ul>
+          <li><strong>Tính năng Artifacts:</strong> Khi bạn yêu cầu Claude vẽ sơ đồ, thiết kế giao diện web (HTML/React) hoặc tạo biểu đồ tương tác, Claude sẽ mở một khung chạy thử trực tiếp ngay bên phải màn hình.</li>
+          <li><strong>Tính năng Projects:</strong> Cho phép bạn nạp sẵn bộ tài liệu thương hiệu, hướng dẫn giọng văn và quy chuẩn code để dùng chung cho hàng chục cuộc hội thoại.</li>
+        </ul>
+
+        <h3>2. Bảng Phím tắt &amp; Thao tác cơ bản trên Claude</h3>
+        <ul>
+          <li><strong>Gọi nhanh cửa sổ Claude Desktop từ bất kỳ ứng dụng nào:</strong> Nhấn <code>Ctrl + Alt + Space</code> (Windows) hoặc <code>⌘ Cmd + ⇧ Shift + Space</code> (macOS).</li>
+          <li><strong>Mở cuộc trò chuyện mới / Tìm kiếm nhanh:</strong> Nhấn <code>Ctrl + K</code> (Windows) hoặc <code>⌘ Cmd + K</code> (macOS).</li>
+          <li><strong>Xuống dòng tạo cấu trúc thẻ XML trong khung chat:</strong> Nhấn <code>Shift + Enter</code>.</li>
+          <li><strong>Chụp màn hình gửi thẳng vào Claude Desktop:</strong> Mở Quick Entry bằng phím tắt rồi bấm biểu tượng chụp vùng chọn để hỏi ngay về đoạn văn/code đang hiển thị.</li>
+        </ul>
+
+        <h3>3. Bí quyết dùng thẻ XML để tăng 30% độ chính xác trên Claude</h3>
+        <p>Claude được huấn luyện đặc biệt để nhận diện các thẻ đóng/mở kiểu XML. Hãy dùng mẫu dưới đây khi giao việc khó:</p>
+        <pre><code>&lt;tai_lieu_goc&gt;
+[Dán nội dung báo cáo hoặc bài viết mẫu của bạn vào đây]
+&lt;/tai_lieu_goc&gt;
+
+&lt;phong_cach_viet&gt;
+Tự nhiên, gãy gọn, ưu tiên động từ mạnh, cấm dùng từ sáo rỗng.
+&lt;/phong_cach_viet&gt;
+
+&lt;yeu_cau&gt;
+Hãy chuyển hóa tài liệu trên thành 1 bài đăng LinkedIn/Facebook sâu sắc kèm 1 sơ đồ tổng kết trong Artifacts.
+&lt;/yeu_cau&gt;</code></pre>
+      `
+    },
+    {
+      id: "post-8",
+      title: "Cẩm nang Google Gemini & AI Studio: Xử lý ngữ cảnh 2 triệu Token & Tổ hợp phím tắt cần nhớ",
+      slug: "cam-nang-google-gemini-va-ai-studio-phim-tat",
+      category: "tool-review",
+      categoryLabel: "Đánh giá AI Tools",
+      author: "Thu Hà",
+      authorRole: "AI Product Researcher",
+      date: "02/11/2026",
+      readTime: "6 phút đọc",
+      views: 2610,
+      likes: 234,
+      featured: false,
+      coverImage: "assets/covers/post-8.svg",
+      coverStyle: "linear-gradient(135deg, #0C4A6E 0%, #1E3A8A 50%, #7C3AED 100%)",
+      coverBadge: "GOOGLE GEMINI",
+      excerpt: "Khai thác tối đa cửa sổ ngữ cảnh khổng lồ 1M–2M token của Google Gemini để đọc sách dày, xem video dài 1 tiếng và làm chủ các lệnh gọi nhanh @Workspace.",
+      tags: ["Gemini", "Google AI Studio", "Phím tắt", "Workspace"],
+      content: `
+        <h3>1. Sự khác biệt giữa Google Gemini và Google AI Studio</h3>
+        <p>Hệ sinh thái AI của Google cung cấp 2 cổng truy cập chính phục vụ hai nhu cầu khác nhau:</p>
+        <ul>
+          <li><strong>Google Gemini (gemini.google.com):</strong> Trợ lý cá nhân kết nối trực tiếp với Gmail, Google Drive, Google Docs và YouTube. Cực mạnh khi cần tìm thông tin trong kho dữ liệu cá nhân.</li>
+          <li><strong>Google AI Studio (aistudio.google.com):</strong> Môi trường chuyên nghiệp (miễn phí) dành cho người làm sản phẩm và lập trình viên, cho phép nạp tới <strong>1–2 triệu token</strong> (tương đương 1.500 trang sách hoặc video dài hơn 1 giờ) và tùy chỉnh thanh <code>Temperature</code>.</li>
+        </ul>
+
+        <h3>2. Các Phím tắt &amp; Lệnh gọi nhanh cơ bản trên Gemini / AI Studio</h3>
+        <ul>
+          <li><strong>Thực thi câu lệnh (Run Prompt) trong Google AI Studio:</strong> Nhấn <code>Ctrl + Enter</code> (Windows) hoặc <code>⌘ Cmd + Enter</code> (macOS).</li>
+          <li><strong>Gọi tiện ích mở rộng bằng phím <code>@</code>:</strong> Trong ô nhập liệu của Gemini, gõ trực tiếp <code>@Google Drive</code>, <code>@Gmail</code>, <code>@Google Docs</code> hoặc <code>@YouTube</code> để ra lệnh cho AI lục tìm đúng nguồn dữ liệu đó.</li>
+          <li><strong>Bật kiểm chứng thực tế (Grounding with Google Search):</strong> Trong AI Studio, bật công tắc <em>Grounding</em> ở cột bên phải để AI tự động đối chiếu câu trả lời với kết quả Google Search mới nhất.</li>
+        </ul>
+
+        <blockquote>
+          ⚡ <strong>Mẹo thực chiến:</strong> Khi dùng Google AI Studio để viết code hoặc trích xuất dữ liệu từ file PDF dài, hãy kéo thanh <strong>Temperature xuống mức 0.1 – 0.2</strong> để câu trả lời đạt độ chính xác và ổn định cao nhất.
+        </blockquote>
+
+        <h3>3. Mẫu lệnh phân tích Video dài hoặc Tài liệu lớn trên Gemini</h3>
+        <pre><code>@YouTube [Dán link video bài giảng hoặc hội thảo dài 1-2 tiếng]
+Hãy thực hiện 3 việc sau:
+1. Tóm tắt 5 luận điểm quan trọng nhất kèm mốc thời gian (Timestamp phút:giây) tương ứng.
+2. Trích xuất toàn bộ các công cụ, số liệu hoặc tên sách được diễn giả nhắc tới trong video.
+3. Chuyển hóa nội dung thành bảng kế hoạch hành động áp dụng được ngay.</code></pre>
+      `
+    },
+    {
+      id: "post-9",
+      title: "Hướng dẫn Cursor & Antigravity IDE: Quy trình lập trình bằng AI & Phím tắt vàng (Ctrl+K, Ctrl+I, Ctrl+L)",
+      slug: "huong-dan-cursor-antigravity-ide-va-phim-tat-vang",
+      category: "ai-coding",
+      categoryLabel: "AI cho Lập trình",
+      author: "Hoàng Nam",
+      authorRole: "Full-stack Tech Lead",
+      date: "02/11/2026",
+      readTime: "8 phút đọc",
+      views: 3590,
+      likes: 312,
+      featured: false,
+      coverImage: "assets/covers/post-9.svg",
+      coverStyle: "linear-gradient(135deg, #090D16 0%, #1E1B4B 50%, #06B6D4 100%)",
+      coverBadge: "AI-FIRST IDE",
+      excerpt: "Giải mã cách các lập trình viên hiện đại xây dựng ứng dụng nhanh gấp 5 lần với AI IDE. Phân biệt rõ khi nào dùng Tab, Ctrl+K, Ctrl+L và Agent đa file Ctrl+I.",
+      tags: ["Cursor", "Antigravity", "AI Coding", "Phím tắt"],
+      content: `
+        <h3>1. AI-First IDE (Cursor / Antigravity) thay đổi việc lập trình như thế nào?</h3>
+        <p>Thay vì phải copy từng đoạn code từ trình duyệt dán vào trình soạn thảo, các môi trường lập trình tích hợp AI như <strong>Cursor</strong> và <strong>Antigravity IDE</strong> có khả năng đọc hiểu toàn bộ cấu trúc thư mục dự án, tự động sửa nhiều file cùng lúc và chạy lệnh kiểm tra trong Terminal.</p>
+
+        <h3>2. Bảng 6 Phím tắt vàng bắt buộc phải thuộc lòng</h3>
+        <ul>
+          <li><strong><code>Tab</code> — Chấp nhận gợi ý code thông minh (Autocomplete):</strong> Tự động dự đoán dòng code hoặc vị trí con trỏ tiếp theo bạn sắp sửa.</li>
+          <li><strong><code>Ctrl + K</code> (macOS: <code>⌘ Cmd + K</code>) — Sửa code trực tiếp tại dòng (Inline Edit):</strong> Bôi đen một hàm → bấm <code>Ctrl + K</code> → gõ yêu cầu ngắn (VD: <em>"Thêm xử lý lỗi try/catch và tối ưu vòng lặp"</em>).</li>
+          <li><strong><code>Ctrl + L</code> (macOS: <code>⌘ Cmd + L</code>) — Đưa đoạn code đang chọn vào khung Chat:</strong> Giúp bạn hỏi đáp sâu về logic của đoạn code đó mà không làm thay đổi file ngay lập tức.</li>
+          <li><strong><code>Ctrl + I</code> (macOS: <code>⌘ Cmd + I</code>) — Mở Composer / AI Agent đa file:</strong> Dùng khi cần tạo tính năng mới xuyên suốt cả HTML, CSS, JS hoặc Backend.</li>
+          <li><strong><code>Ctrl + Enter</code> (macOS: <code>⌘ Cmd + Enter</code>) — Chấp nhận thay đổi (Accept Diff):</strong> Phê duyệt nhanh phần code mới do AI vừa đề xuất.</li>
+          <li><strong>Ký hiệu <code>@</code> trong khung Chat/Agent:</strong> Gõ <code>@Files</code> để chỉ định file cụ thể, <code>@Codebase</code> để quét toàn dự án, hoặc <code>@Docs</code> để tra cứu tài liệu thư viện mới nhất.</li>
+        </ul>
+
+        <h3>3. Mẫu file quy tắc <code>AGENTS.md</code> / <code>.cursorrules</code> chuẩn dự án</h3>
+        <pre><code># Quy chuẩn Dự án (AGENTS.md)
+1. Kiến trúc: Giữ code tách biệt rõ ràng giữa dữ liệu (data), giao diện (styles) và điều khiển (app).
+2. Giao diện: Sử dụng biến CSS (CSS Variables), đảm bảo tương thích cả chế độ Sáng/Tối và màn hình di động.
+3. Quy tắc sửa code: Bảo toàn các chú thích hiện có, không tự ý cài thêm thư viện ngoài khi chưa được yêu cầu.</code></pre>
+      `
+    },
+    {
+      id: "post-10",
+      title: "Perplexity AI là gì? Cách biến công cụ tìm kiếm AI thành trợ lý nghiên cứu & Phím tắt tra cứu nhanh",
+      slug: "perplexity-ai-la-gi-cach-dung-va-phim-tat-tra-cuu",
+      category: "tool-review",
+      categoryLabel: "Đánh giá AI Tools",
+      author: "Thu Hà",
+      authorRole: "AI Product Researcher",
+      date: "02/11/2026",
+      readTime: "6 phút đọc",
+      views: 2480,
+      likes: 219,
+      featured: false,
+      coverImage: "assets/covers/post-10.svg",
+      coverStyle: "linear-gradient(135deg, #042F2E 0%, #115E59 55%, #2563EB 100%)",
+      coverBadge: "TRA CỨU AI",
+      excerpt: "Thay vì mở 20 tab tìm kiếm thủ công, Perplexity AI tự động đọc hàng chục nguồn tin uy tín, tổng hợp câu trả lời và đính kèm link trích dẫn kiểm chứng từng câu.",
+      tags: ["Perplexity", "Deep Research", "Nghiên cứu", "Phím tắt"],
+      content: `
+        <h3>1. Điểm khác biệt cốt lõi của Perplexity AI so với Chatbot thông thường</h3>
+        <p><strong>Perplexity AI</strong> là sự giao thoa giữa công cụ tìm kiếm thời gian thực và mô hình ngôn ngữ lớn. Mỗi khi bạn đặt câu hỏi, Perplexity tự động duyệt qua hàng chục trang báo, tài liệu học thuật và diễn đàn mới nhất, sau đó tổng hợp câu trả lời kèm theo các con số trích dẫn <code>[1]</code>, <code>[2]</code> để bạn bấm vào kiểm tra nguồn gốc ngay lập tức.</p>
+        <ul>
+          <li><strong>Chế độ Focus (Bộ lọc nguồn tin):</strong> Cho phép khóa phạm vi tìm kiếm chỉ trong <em>Academic</em> (bài báo khoa học có bình duyệt), <em>Finance</em> (báo cáo tài chính), <em>Social</em> (thảo luận thực tế từ cộng đồng) hoặc <em>Web</em>.</li>
+          <li><strong>Chế độ Deep Research:</strong> Tự động thực hiện hàng chục bước tìm kiếm đệ quy trong 2–3 phút để xuất bản một bản báo cáo nghiên cứu thị trường chuyên sâu dài nhiều trang.</li>
+        </ul>
+
+        <h3>2. Bảng Phím tắt cơ bản trên Perplexity AI</h3>
+        <ul>
+          <li><strong>Mở luồng câu hỏi mới (New Thread) ở bất kỳ đâu:</strong> Nhấn <code>Ctrl + I</code> (Windows) hoặc <code>⌘ Cmd + I</code> (macOS) hoặc <code>Ctrl + K</code>.</li>
+          <li><strong>Nhảy nhanh vào ô hỏi tiếp (Follow-up Input):</strong> Nhấn phím <code>/</code> trên bàn phím.</li>
+          <li><strong>Sao chép toàn bộ câu trả lời kèm danh sách link nguồn:</strong> Bấm nút Copy ở cuối bài hoặc dùng tổ hợp phím chọn nhanh để dán sang tài liệu báo cáo.</li>
+        </ul>
+
+        <h3>3. Mẫu câu lệnh nghiên cứu thị trường chuyên sâu trên Perplexity</h3>
+        <pre><code>Hãy tra cứu dữ liệu mới nhất năm 2025-2026 về xu hướng ứng dụng AI trong ngành Bán lẻ &amp; Thương mại điện tử tại Đông Nam Á và Việt Nam.
+Yêu cầu:
+1. Chỉ sử dụng các báo cáo có số liệu thống kê cụ thể và ghi rõ nguồn trích dẫn + năm phát hành.
+2. Lập bảng so sánh 3 ứng dụng mang lại ROI cao nhất thực tế.
+3. Chỉ ra 3 rào cản lớn nhất khi doanh nghiệp vừa và nhỏ triển khai.</code></pre>
+      `
+    },
+    {
+      id: "post-11",
+      title: "Toàn tập Google NotebookLM: Xây dựng kho tri thức chống AI bịa thông tin & Thao tác tắt hiệu quả",
+      slug: "toan-tap-google-notebooklm-chong-ai-bia-thong-tin",
+      category: "workflow",
+      categoryLabel: "Tự động hóa & Workflow",
+      author: "Lan Anh",
+      authorRole: "Productivity Coach",
+      date: "02/11/2026",
+      readTime: "6 phút đọc",
+      views: 2730,
+      likes: 251,
+      featured: false,
+      coverImage: "assets/covers/post-11.svg",
+      coverStyle: "linear-gradient(135deg, #064E3B 0%, #0F766E 50%, #4F46E5 100%)",
+      coverBadge: "NOTEBOOKLM",
+      excerpt: "Làm sao để AI chỉ trả lời dựa trên đúng giáo trình, hợp đồng và tài liệu nội bộ của bạn với tỷ lệ ảo giác bằng 0? Đây là hướng dẫn chi tiết nhất về Google NotebookLM.",
+      tags: ["NotebookLM", "Chống ảo giác", "PDF", "Podcast AI"],
+      content: `
+        <h3>1. Google NotebookLM là gì &amp; Tại sao hoàn toàn miễn phí nhưng cực mạnh?</h3>
+        <p><strong>Google NotebookLM</strong> là trợ lý nghiên cứu cá nhân hoạt động theo nguyên tắc <em>"Giả định thế giới đóng" (Closed-world Grounding)</em>. Khi bạn tải lên các file PDF, Google Docs, Google Slides, đường dẫn trang web hoặc video YouTube (tối đa 50 nguồn trong 1 sổ tay), AI sẽ <strong>chỉ sử dụng thông tin nằm trong các tài liệu đó</strong> để trả lời bạn.</p>
+
+        <h3>2. Các Thao tác tắt &amp; Tính năng tăng tốc trong NotebookLM</h3>
+        <ul>
+          <li><strong>Bấm vào con số trích dẫn <code>[1]</code>, <code>[2]</code>:</strong> Nhảy trực tiếp tới đúng đoạn văn bản gốc được tô sáng trong file PDF/Docs bên cột trái để đối chiếu tức thì.</li>
+          <li><strong>Chọn/Bỏ chọn nguồn tài liệu nhanh (Source Toggle):</strong> Tích chọn chỉ 1–2 file cụ thể ở cột trái khi bạn muốn đặt câu hỏi riêng cho các file đó mà không cần xóa các nguồn khác.</li>
+          <li><strong>Chế độ Audio Overview (Interactive Mode):</strong> Biến tài liệu khô khan thành cuộc trò chuyện Podcast giữa 2 host AI; bấm nút <strong>Join</strong> để ngắt lời và đặt câu hỏi trực tiếp bằng giọng nói.</li>
+          <li><strong>Gộp nhiều Note thành Báo cáo:</strong> Bấm <em>Save to note</em> ở các câu trả lời hay → Chọn tất cả Note → Yêu cầu tạo <em>Study Guide</em> (Đề cương), <em>Briefing Doc</em> (Tài liệu tóm tắt) hoặc <em>Timeline</em> (Dòng thời gian sự kiện).</li>
+        </ul>
+
+        <h3>3. Mẫu Prompt rà soát Hợp đồng / Tài liệu chuyên môn trong NotebookLM</h3>
+        <pre><code>Dựa hoàn toàn trên các tài liệu đã chọn trong sổ tay này (không suy diễn thêm từ bên ngoài):
+1. Liệt kê toàn bộ các điều khoản có quy định về mức phạt, thời hạn thanh toán và trách nhiệm bồi thường.
+2. Trích dẫn nguyên văn câu gốc kèm số mục/trang tương ứng.
+3. Chỉ ra các điểm mâu thuẫn (nếu có) giữa tài liệu A và tài liệu B.</code></pre>
+      `
+    },
+    {
+      id: "post-12",
+      title: "Cẩm nang Midjourney v7 & Flux.1: Giới thiệu công nghệ tạo ảnh AI & Bảng tham số lệnh tắt cơ bản",
+      slug: "cam-nang-midjourney-va-flux-bang-tham-so-lenh-tat",
+      category: "practical-guide",
+      categoryLabel: "Hướng dẫn thực chiến",
+      author: "Minh Quân (iTee360)",
+      authorRole: "AI Solutions Architect",
+      date: "02/11/2026",
+      readTime: "7 phút đọc",
+      views: 3050,
+      likes: 272,
+      featured: false,
+      coverImage: "assets/covers/post-12.svg",
+      coverStyle: "linear-gradient(135deg, #3B0764 0%, #701A75 50%, #E11D48 100%)",
+      coverBadge: "THIẾT KẾ ẢNH AI",
+      excerpt: "Nắm trọn bộ tham số lệnh tắt (--ar, --sref, --cref, --cw, --no, --s) giúp bạn kiểm soát hoàn toàn bố cục, ánh sáng và giữ nguyên khuôn mặt nhân vật xuyên suốt bộ ảnh.",
+      tags: ["Midjourney", "Flux.1", "Tham số tắt", "Tạo ảnh AI"],
+      content: `
+        <h3>1. Midjourney v7 &amp; Flux.1: Hai tiêu chuẩn vàng của thiết kế hình ảnh AI</h3>
+        <p>Nếu như <strong>Midjourney</strong> thống trị về chiều sâu nghệ thuật, chất liệu ánh sáng điện ảnh và kho mã phong cách (SREF) khổng lồ, thì <strong>Flux.1</strong> lại nổi bật nhờ khả năng bám sát câu lệnh phức tạp và hiển thị chữ viết (Typography) sắc nét trên biển hiệu, poster.</p>
+
+        <h3>2. Bảng Tham số Lệnh tắt (Parameters) quan trọng nhất cần nhớ</h3>
+        <p>Trong Midjourney, các tham số tắt luôn được đặt ở <strong>cuối câu lệnh</strong>, bắt đầu bằng hai dấu gạch ngang <code>--</code>:</p>
+        <ul>
+          <li><strong><code>--ar &lt;rộng:cao&gt;</code> (Aspect Ratio — Tỷ lệ khung hình):</strong> Dùng <code>--ar 16:9</code> cho ảnh bìa Blog/YouTube, <code>--ar 9:16</code> cho Reels/TikTok, <code>--ar 4:5</code> cho bài đăng Facebook/Instagram.</li>
+          <li><strong><code>--cref &lt;URL_ảnh&gt;</code> (Character Reference — Khóa nhân vật):</strong> Giữ nguyên khuôn mặt nhân vật từ ảnh gốc sang nhiều bối cảnh mới. Kết hợp với <code>--cw 20</code> (chỉ giữ mặt, đổi trang phục) hoặc <code>--cw 100</code> (giữ cả mặt và quần áo).</li>
+          <li><strong><code>--sref &lt;URL_ảnh hoặc Mã_số&gt;</code> (Style Reference — Khóa phong cách):</strong> Sao chép toàn bộ tông màu, ánh sáng và chất liệu nghệ thuật từ một bức ảnh mẫu.</li>
+          <li><strong><code>--no &lt;từ_khóa&gt;</code> (Negative Prompt — Loại trừ chi tiết thừa):</strong> Ví dụ <code>--no text, watermark, blur, extra fingers</code> để loại bỏ chữ rác và chi tiết bị nhòe.</li>
+          <li><strong><code>--s &lt;0-1000&gt;</code> (Stylize — Độ bay bổng):</strong> Mặc định là 100. Đặt <code>--s 50</code> nếu muốn ảnh bám sát từng chữ trong prompt, hoặc <code>--s 350</code> nếu muốn ảnh giàu tính nghệ thuật.</li>
+        </ul>
+
+        <h3>3. Công thức Prompt tạo ảnh thương hiệu đồng nhất</h3>
+        <pre><code>/imagine Medium shot of a Vietnamese tech entrepreneur working on a laptop in a minimalist sunlit studio, wearing smart casual attire, natural skin texture, shot on 35mm lens, f/1.8, cinematic rim lighting --ar 16:9 --s 200 --no watermark, text, blurry</code></pre>
+      `
+    },
+    {
+      id: "post-13",
+      title: "Làm chủ ElevenLabs & Suno AI: Hướng dẫn tạo giọng đọc cảm xúc, sáng tác nhạc AI & Thẻ lệnh tắt",
+      slug: "lam-chu-elevenlabs-va-suno-ai-giong-doc-va-nhac-ai",
+      category: "practical-guide",
+      categoryLabel: "Hướng dẫn thực chiến",
+      author: "Lan Anh",
+      authorRole: "Productivity Coach",
+      date: "02/11/2026",
+      readTime: "6 phút đọc",
+      views: 2390,
+      likes: 214,
+      featured: false,
+      coverImage: "assets/covers/post-13.svg",
+      coverStyle: "linear-gradient(135deg, #1E1B4B 0%, #4C1D95 50%, #D97706 100%)",
+      coverBadge: "VOICE & MUSIC AI",
+      excerpt: "Cách dùng dấu câu và thẻ cấu trúc [Verse], [Chorus], [Instrumental Drop] để điều khiển nhịp nghỉ lấy hơi trong ElevenLabs và đạo diễn bài hát chuyên nghiệp trên Suno AI.",
+      tags: ["ElevenLabs", "Suno AI", "Voice AI", "Music AI"],
+      content: `
+        <h3>1. Bộ đôi ElevenLabs &amp; Suno AI cho nhà sáng tạo nội dung</h3>
+        <p><strong>ElevenLabs</strong> là nền tảng chuyển văn bản thành giọng nói (Text-to-Speech) và nhân bản giọng nói (Voice Cloning) tự nhiên nhất hiện nay, hỗ trợ tiếng Việt giàu cảm xúc. Trong khi đó, <strong>Suno AI</strong> cho phép bạn sáng tác một ca khúc hoàn chỉnh (gồm cả phần hòa âm phối khí lẫn giọng hát) hoặc nhạc nền không lời chỉ từ một đoạn văn bản.</p>
+
+        <h3>2. Hệ thống Ký hiệu tắt &amp; Thẻ điều khiển (Meta Tags) cần nhớ</h3>
+        <ul>
+          <li><strong>Điều khiển nhịp nghỉ lấy hơi trong ElevenLabs:</strong>
+            <ul>
+              <li>Dùng dấu gạch ngang dài <code>—</code> hoặc dấu ba chấm <code>...</code> để tạo khoảng ngập ngừng tự nhiên giữa câu.</li>
+              <li>Dùng thẻ <code>&lt;break time="1.0s" /&gt;</code> khi cần ngắt nghỉ chính xác theo số giây giữa hai đoạn nội dung.</li>
+              <li>Chỉnh thanh <strong>Stability ở mức 45% – 55%</strong> để giọng đọc giàu ngữ điệu nhất (đặt quá cao giọng sẽ bị đều đều như robot).</li>
+            </ul>
+          </li>
+          <li><strong>Các thẻ cấu trúc bài hát (Meta Tags) trong Suno AI:</strong>
+            <ul>
+              <li><code>[Intro]</code> / <code>[Outro]</code>: Đoạn dạo đầu và kết bài.</li>
+              <li><code>[Verse 1]</code>, <code>[Pre-Chorus]</code>, <code>[Chorus]</code>: Phân tách rõ đoạn hát kể chuyện và điệp khúc cao trào.</li>
+              <li><code>[Instrumental Interlude]</code> hoặc <code>[Guitar Solo]</code>: Yêu cầu nhạc cụ độc tấu không lời.</li>
+              <li><code>[Whisper]</code> / <code>[Building Intensity]</code>: Điều khiển sắc thái giọng hát từ thì thầm sang bùng nổ.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>3. Mẫu cấu trúc Prompt sáng tác nhạc trên Suno AI (Custom Mode)</h3>
+        <pre><code>Style of Music: Acoustic Pop Ballad, warm piano, gentle strings, emotional female vocal, 92 BPM
+
+Lyrics:
+[Intro - Soft Piano]
+(Một buổi sáng trong lành...)
+
+[Verse 1]
+Ánh nắng nhẹ rơi trên trang giấy mới
+Những ý tưởng bắt đầu cất lời...
+
+[Chorus - Uplifting, Full Band]
+Cùng bước tới tương lai rộng mở
+Biến ước mơ thành từng nhịp thở...
+
+[Outro - Fade Out]</code></pre>
+      `
+    },
+    {
+      id: "post-14",
+      title: "Gamma App & Napkin AI: Bí quyết biến văn bản thành Slide thuyết trình, Sơ đồ tư duy & Phím tắt",
+      slug: "gamma-app-va-napkin-ai-tao-slide-so-do-va-phim-tat",
+      category: "workflow",
+      categoryLabel: "Tự động hóa & Workflow",
+      author: "Hoàng Nam",
+      authorRole: "Full-stack Tech Lead",
+      date: "02/11/2026",
+      readTime: "6 phút đọc",
+      views: 2810,
+      likes: 246,
+      featured: false,
+      coverImage: "assets/covers/post-14.svg",
+      coverStyle: "linear-gradient(135deg, #172554 0%, #312E81 50%, #0D9488 100%)",
+      coverBadge: "SLIDE & SƠ ĐỒ AI",
+      excerpt: "Chấm dứt cảnh thức khuya căn chỉnh từng khung chữ trong PowerPoint. Kết hợp Gamma App và Napkin AI kèm bộ phím tắt soạn thảo nhanh để hoàn thành bài thuyết trình trong 3 phút.",
+      tags: ["Gamma App", "Napkin AI", "Slide AI", "Phím tắt"],
+      content: `
+        <h3>1. Khi nào dùng Gamma App, khi nào dùng Napkin AI?</h3>
+        <ul>
+          <li><strong>Gamma App (gamma.app):</strong> Chuyên biến một dàn ý văn bản hoặc tài liệu Word/PDF thành một bộ <strong>Slide thuyết trình hoàn chỉnh</strong> (có thể xuất ra file PowerPoint <code>.pptx</code> hoặc PDF), tự động chia cột, chọn bảng màu và chèn ảnh minh họa.</li>
+          <li><strong>Napkin AI (napkin.ai):</strong> Chuyên biến từng đoạn văn bản giải thích quy trình, so sánh hoặc phân tích thành <strong>Sơ đồ tư duy, Flowchart và Infographic trực quan</strong> để bạn tải về dạng ảnh PNG/SVG chèn vào bài viết hoặc báo cáo.</li>
+        </ul>
+
+        <h3>2. Bảng Phím tắt &amp; Lệnh gõ nhanh trên Gamma App &amp; Napkin AI</h3>
+        <ul>
+          <li><strong>Gõ ký tự <code>/</code> (Slash Command) trong Gamma:</strong> Mở ngay menu chèn nhanh khối bố cục (2 cột, 3 cột, bảng biểu, hộp thông báo, biểu đồ số liệu) mà không cần dùng chuột.</li>
+          <li><strong>Gõ 3 dấu gạch ngang <code>---</code> rồi nhấn <code>Enter</code>:</strong> Ngắt sang một trang Slide (Card) mới ngay tại vị trí con trỏ khi đang chuẩn bị nội dung ở chế độ Paste Text.</li>
+          <li><strong>Nhấn <code>Ctrl + E</code> (macOS: <code>⌘ Cmd + E</code>) trong Gamma:</strong> Gọi nhanh trợ lý AI để yêu cầu đổi bố cục hoặc viết gọn lại trang Slide đang chọn.</li>
+          <li><strong>Bấm biểu tượng Tia chớp xanh (Sparkle ⚡) bên lề trái trong Napkin AI:</strong> Tự động biến đoạn văn đang chọn thành hàng chục kiểu sơ đồ quy trình khác nhau chỉ sau 1 cú nhấp chuột.</li>
+        </ul>
+
+        <h3>3. Quy trình chuẩn: Claude (Dàn ý) → Gamma (Slide) → Napkin (Sơ đồ)</h3>
+        <pre><code>Hãy viết dàn ý cho bộ Slide thuyết trình gồm 7 trang về chủ đề: [Tên dự án / Báo cáo].
+Yêu cầu trình bày:
+- Ngăn cách giữa các trang Slide bằng dấu "---" để tôi dán trực tiếp vào Gamma App.
+- Mỗi trang chỉ gồm 1 tiêu đề chính và tối đa 3-4 ý ngắn gọn, giàu số liệu, dễ chuyển thành sơ đồ Infographic.</code></pre>
+      `
     }
   ],
 
@@ -1049,6 +1448,105 @@ Viết 3 kịch bản video ngắn 45 giây giới thiệu tính năng tự đ�
         avatar: "KL",
         content: "Tính năng bấm vào số trích dẫn nhảy thẳng đến đoạn văn gốc trong PDF của NotebookLM cứu mình cả kỳ làm luận văn vừa rồi.",
         likes: 18
+      }
+    ],
+    "post-6": [
+      {
+        id: "cmt-601",
+        author: "Lê Hoàng Bách",
+        role: "Backend Engineer",
+        date: "02/11/2026",
+        avatar: "HB",
+        content: "Phím tắt `Ctrl + Shift + ;` để copy nhanh khối code cuối cùng trong ChatGPT tiện thật sự, đỡ phải cuộn chuột lên tìm nút Copy mỗi lần hỏi.",
+        likes: 21
+      }
+    ],
+    "post-7": [
+      {
+        id: "cmt-701",
+        author: "Nguyễn Thu Trang",
+        role: "Content Lead",
+        date: "02/11/2026",
+        avatar: "TT",
+        content: "Từ ngày dùng Claude Projects kết hợp thẻ XML `<tai_lieu_goc>` như bài hướng dẫn, mình gần như không phải sửa lại câu chữ tiếng Việt nữa.",
+        likes: 19
+      }
+    ],
+    "post-8": [
+      {
+        id: "cmt-801",
+        author: "Phạm Minh Đức",
+        role: "Business Analyst",
+        date: "02/11/2026",
+        avatar: "MĐ",
+        content: "Mẹo chỉnh Temperature xuống 0.2 trong Google AI Studio khi đọc tài liệu dài giúp kết quả ổn định và chuẩn xác hơn hẳn.",
+        likes: 16
+      }
+    ],
+    "post-9": [
+      {
+        id: "cmt-901",
+        author: "Trương Gia Huy",
+        role: "Full-stack Developer",
+        date: "02/11/2026",
+        avatar: "GH",
+        content: "Phân biệt rõ lúc nào dùng `Ctrl + K` (sửa 1 hàm nhỏ) và lúc nào dùng `Ctrl + I` (Agent đa file) là bí quyết quan trọng nhất khi dùng Cursor và Antigravity.",
+        likes: 29
+      }
+    ],
+    "post-10": [
+      {
+        id: "cmt-1001",
+        author: "Đặng Mai Phương",
+        role: "Market Researcher",
+        date: "02/11/2026",
+        avatar: "MP",
+        content: "Chế độ Deep Research + phím `/` hỏi tiếp trên Perplexity giúp mình làm báo cáo tổng quan ngành chỉ mất 15 phút thay vì cả buổi sáng.",
+        likes: 17
+      }
+    ],
+    "post-11": [
+      {
+        id: "cmt-1101",
+        author: "Bùi Tuấn Kiệt",
+        role: "Chuyên viên Pháp chế",
+        date: "02/11/2026",
+        avatar: "TK",
+        content: "Dùng NotebookLM để rà soát hợp đồng rất yên tâm vì bấm vào số trích dẫn là đối chiếu được ngay với điều khoản gốc trong file PDF.",
+        likes: 22
+      }
+    ],
+    "post-12": [
+      {
+        id: "cmt-1201",
+        author: "Võ Thanh Sơn",
+        role: "Art Director",
+        date: "02/11/2026",
+        avatar: "TS",
+        content: "Bảng tổng hợp `--cref`, `--cw` và `--sref` rất dễ hiểu. Người mới chỉ cần nhớ bộ tham số này là làm chủ được Midjourney v7.",
+        likes: 25
+      }
+    ],
+    "post-13": [
+      {
+        id: "cmt-1301",
+        author: "Hoàng Yến Nhi",
+        role: "YouTube Creator",
+        date: "02/11/2026",
+        avatar: "YN",
+        content: "Mẹo thêm dấu gạch ngang `—` và giảm Stability xuống 50% trong ElevenLabs làm giọng đọc tiếng Việt tự nhiên hơn rất nhiều!",
+        likes: 18
+      }
+    ],
+    "post-14": [
+      {
+        id: "cmt-1401",
+        author: "Ngô Quang Vinh",
+        role: "Project Manager",
+        date: "02/11/2026",
+        avatar: "QV",
+        content: "Ký hiệu `---` để ngắt trang Slide trước khi dán vào Gamma App kết hợp với vẽ sơ đồ bên Napkin AI đúng là bộ đôi cứu tinh mỗi kỳ họp quý.",
+        likes: 24
       }
     ]
   }

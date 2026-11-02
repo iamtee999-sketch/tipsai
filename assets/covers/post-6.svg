@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#052E16"/>
+      <stop offset="50%" stop-color="#065F46"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg6)"/>
+  <circle cx="680" cy="90" r="180" fill="#10B981" fill-opacity="0.18"/>
+  <rect x="55" y="55" width="690" height="340" rx="22" fill="#0F172A" fill-opacity="0.76" stroke="#34D399" stroke-opacity="0.4" stroke-width="2"/>
+  <rect x="90" y="90" width="190" height="34" rx="17" fill="#10B981" fill-opacity="0.25" stroke="#34D399"/>
+  <text x="112" y="112" fill="#A7F3D0" font-family="Inter, sans-serif" font-size="14" font-weight="700">🤖 CHATGPT • GPT-4o / o3</text>
+  <text x="90" y="170" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="30" font-weight="800">Toàn Tập ChatGPT &amp; Phím Tắt Cơ Bản</text>
+  <g font-family="JetBrains Mono, monospace" font-size="15" font-weight="700">
+    <rect x="90" y="210" width="290" height="62" rx="12" fill="#1E293B" stroke="#10B981"/>
+    <text x="110" y="247" fill="#6EE7B7">Alt + Space → Companion</text>
+    <rect x="405" y="210" width="305" height="62" rx="12" fill="#1E293B" stroke="#38BDF8"/>
+    <text x="425" y="247" fill="#7DD3FC">Ctrl + Shift + ; → Copy Code</text>
+    <rect x="90" y="290" width="290" height="62" rx="12" fill="#1E293B" stroke="#A78BFA"/>
+    <text x="110" y="327" fill="#C4B5FD">Ctrl + Shift + O → Chat Mới</text>
+    <rect x="405" y="290" width="305" height="62" rx="12" fill="#1E293B" stroke="#FBBF24"/>
+    <text x="425" y="327" fill="#FDE68A">Ctrl + K → Tìm Lịch Sử Chat</text>
+  </g>
+</svg>
