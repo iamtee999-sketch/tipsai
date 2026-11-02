@@ -635,7 +635,7 @@ main {
   color: var(--text-muted);
 }
 
-.composer-Suggestions {
+.composer-suggestions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;

@@ -570,6 +570,13 @@
     if (!post) return;
 
     document.title = `${post.title} — TipsAI Blog`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && post.excerpt) metaDesc.setAttribute("content", post.excerpt);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", `${post.title} — TipsAI Blog`);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc && post.excerpt) ogDesc.setAttribute("content", post.excerpt);
+
     const isLiked = state.upvotedIds.includes(post.id);
     const isSaved = state.bookmarkedIds.includes(post.id);
     const likeCount = (post.likes || 120) + (isLiked ? 1 : 0);
@@ -748,14 +755,17 @@
 
     renderPostComments(post);
 
-    window.addEventListener("scroll", () => {
-      const bar = document.getElementById("readingProgressBar");
-      if (!bar) return;
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
-      bar.style.width = `${pct}%`;
-    });
+    if (!state.readingScrollBound) {
+      state.readingScrollBound = true;
+      window.addEventListener("scroll", () => {
+        const bar = document.getElementById("readingProgressBar");
+        if (!bar) return;
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+        bar.style.width = `${pct}%`;
+      });
+    }
   }
 
   function renderPostComments(post) {
@@ -763,6 +773,7 @@
     if (!commentsContainer || !post) return;
 
     const storedAll = JSON.parse(localStorage.getItem("tipsai_comments") || "{}");
+    const likedComments = JSON.parse(localStorage.getItem("tipsai_comment_likes") || "[]");
     const defaultList = (DATA.defaultComments && DATA.defaultComments[post.id]) || [];
     const customList = storedAll[post.id] || [];
     const allComments = [...customList, ...defaultList];
@@ -823,8 +834,10 @@
             allComments.length === 0
               ? `<p style="color: var(--text-secondary); font-size: 14px;">Chưa có bình luận nào. Hãy là người đầu tiên chia sẻ góc nhìn của bạn!</p>`
               : allComments
-                  .map(
-                    (c) => `
+                  .map((c) => {
+                    const isCmtLiked = likedComments.includes(c.id);
+                    const cmtLikeCount = (c.likes || 0) + (isCmtLiked ? 1 : 0);
+                    return `
                   <div class="comment-item">
                     <div class="comment-avatar">${escapeHtml(c.avatar || c.author.slice(0, 2).toUpperCase())}</div>
                     <div style="flex: 1;">
@@ -833,20 +846,46 @@
                           <strong style="color: var(--text-primary); font-size: 14.5px;">${escapeHtml(c.author)}</strong>
                           <span class="badge badge-cyan" style="margin-left: 6px; font-size: 11px;">${escapeHtml(c.role || "Thành viên")}</span>
                         </div>
-                        <span style="font-size: 12px; color: var(--text-muted);">${escapeHtml(c.date)}</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                          <span style="font-size: 12px; color: var(--text-muted);">${escapeHtml(c.date)}</span>
+                          <button
+                            type="button"
+                            class="upvote-btn ${isCmtLiked ? "active" : ""}"
+                            style="height: 28px; padding: 0 9px; font-size: 12px;"
+                            data-like-comment="${escapeHtml(c.id)}"
+                          >
+                            👍 ${cmtLikeCount}
+                          </button>
+                        </div>
                       </div>
                       <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
                         ${escapeHtml(c.content)}
                       </p>
                     </div>
                   </div>
-                `
-                  )
+                `;
+                  })
                   .join("")
           }
         </div>
       </div>
     `;
+
+    commentsContainer.querySelectorAll("[data-like-comment]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const cId = btn.getAttribute("data-like-comment");
+        const list = JSON.parse(localStorage.getItem("tipsai_comment_likes") || "[]");
+        const idx = list.indexOf(cId);
+        if (idx === -1) {
+          list.push(cId);
+          showToast("👍 Đã thích bình luận này!");
+        } else {
+          list.splice(idx, 1);
+        }
+        localStorage.setItem("tipsai_comment_likes", JSON.stringify(list));
+        renderPostComments(post);
+      });
+    });
 
     const form = document.getElementById("postCommentForm");
     form?.addEventListener("submit", (e) => {
@@ -1898,6 +1937,19 @@
         }
       });
 
+      (DATA.promptTemplates || []).forEach((prm) => {
+        if (!q || prm.title.toLowerCase().includes(q) || prm.description.toLowerCase().includes(q) || prm.category.toLowerCase().includes(q)) {
+          items.push({
+            type: "⚡ Prompt",
+            title: prm.title,
+            sub: prm.badge,
+            action: () => {
+              window.location.href = "prompts.html";
+            }
+          });
+        }
+      });
+
       DATA.tools.forEach((tool) => {
         if (!q || tool.name.toLowerCase().includes(q) || tool.tagline.toLowerCase().includes(q)) {
           items.push({
@@ -2040,25 +2092,31 @@
               ${savedPosts
                 .map(
                   (p) => `
-                <a href="post.html?id=${encodeURIComponent(p.id)}" class="cmd-result-item">
-                  <div>
+                <div class="cmd-result-item" style="cursor: default;">
+                  <a href="post.html?id=${encodeURIComponent(p.id)}" style="text-decoration: none; color: inherit; flex: 1;">
                     <span class="badge badge-cyan" style="margin-right: 8px;">📰 Bài viết</span>
                     <strong>${escapeHtml(p.title)}</strong>
+                  </a>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <a href="post.html?id=${encodeURIComponent(p.id)}" class="btn btn-secondary btn-sm">Đọc bài →</a>
+                    <button type="button" class="btn btn-ghost btn-sm" data-remove-bm="${escapeHtml(p.id)}" title="Bỏ lưu">✕</button>
                   </div>
-                  <span style="color: var(--brand-primary); font-size: 13px; font-weight: 600;">Đọc bài →</span>
-                </a>
+                </div>
               `
                 )
                 .join("")}
               ${savedTips
                 .map(
                   (t) => `
-                <div class="cmd-result-item" data-saved-tip="${escapeHtml(t.id)}">
-                  <div>
+                <div class="cmd-result-item" style="cursor: default;">
+                  <div data-saved-tip="${escapeHtml(t.id)}" style="cursor: pointer; flex: 1;">
                     <span class="badge badge-purple" style="margin-right: 8px;">💡 ${escapeHtml(t.categoryLabel)}</span>
                     <strong>${escapeHtml(t.title)}</strong>
                   </div>
-                  <span style="color: var(--brand-primary); font-size: 13px; font-weight: 600;">Xem mẹo →</span>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <button type="button" class="btn btn-secondary btn-sm" data-saved-tip="${escapeHtml(t.id)}">Xem mẹo →</button>
+                    <button type="button" class="btn btn-ghost btn-sm" data-remove-bm="${escapeHtml(t.id)}" title="Bỏ lưu">✕</button>
+                  </div>
                 </div>
               `
                 )
@@ -2069,6 +2127,12 @@
 
     document.querySelectorAll("[data-saved-tip]").forEach((el) => {
       el.addEventListener("click", () => openTipDetailModal(el.getAttribute("data-saved-tip")));
+    });
+    document.querySelectorAll("[data-remove-bm]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        toggleBookmark(btn.getAttribute("data-remove-bm"));
+        openBookmarksModal();
+      });
     });
   }
 

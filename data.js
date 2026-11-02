@@ -15,7 +15,7 @@ window.TIPSAI_DATA = {
   // Danh mục Bài viết / Blog
   postCategories: [
     { id: "all", name: "Tất cả bài viết" },
-    { id: "Print-guide", name: "Hướng dẫn thực chiến" },
+    { id: "practical-guide", name: "Hướng dẫn thực chiến" },
     { id: "prompt-mastery", name: "Nghệ thuật Prompt" },
     { id: "ai-coding", name: "AI cho Lập trình" },
     { id: "tool-review", name: "Đánh giá AI Tools" },
@@ -145,7 +145,7 @@ Viết 3 kịch bản video ngắn 45 giây giới thiệu tính năng tự đ�
       id: "post-4",
       title: "10 Câu lệnh 'Hậu kiểm' bắt buộc phải dùng để loại bỏ hoàn toàn văn phong sáo rỗng của AI",
       slug: "10-cau-lenh-hau-kiem-loai-bo-van-phong-ai",
-      category: "Print-guide",
+      category: "practical-guide",
       categoryLabel: "Hướng dẫn thực chiến",
       author: "Minh Quân (iTee360)",
       authorRole: "AI Solutions Architect",
@@ -910,7 +910,7 @@ Viết 3 kịch bản video ngắn 45 giây giới thiệu tính năng tự đ�
       winnerReason: "Tự động duyệt hàng chục nguồn web uy tín và gắn link trích dẫn minh bạch từng câu.",
       runnerUp: "ChatGPT Search",
       bestFree: "Perplexity Free / Google AI Mode",
-      proWorkflow: "Bật Focus: Academic khi cần tìm bài báo khoa học hoặc số liệu nghiên cứu chính통."
+      proWorkflow: "Bật Focus: Academic khi cần tìm bài báo khoa học hoặc số liệu nghiên cứu chính thống."
     },
     {
       task: "🎨 Thiết kế Hình ảnh Quảng cáo, Nhân vật & Chữ trên ảnh",
