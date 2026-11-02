@@ -44,6 +44,11 @@
         state.theme === "dark" ? "Chuyển sang giao diện Sáng" : "Chuyển sang giao diện Tối"
       );
     }
+    const footerThemeBtn = document.getElementById("footerThemeBtn");
+    if (footerThemeBtn) {
+      footerThemeBtn.innerHTML =
+        state.theme === "dark" ? "☀️ Giao diện Sáng" : "🌙 Giao diện Tối";
+    }
   }
 
   applyTheme(state.theme);
@@ -204,38 +209,134 @@
     const footerEl = document.getElementById("siteFooter");
     if (footerEl) {
       footerEl.innerHTML = `
-        <div class="container" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
-          <div style="max-width: 460px;">
-            <a href="index.html" class="brand-logo" style="margin-bottom: 8px;">
-              <span class="brand-mark">✦</span>
-              <span>TipsAI</span>
-              <span class="brand-tag">iTee360</span>
-            </a>
-            <p style="color: var(--text-secondary); font-size: 13.5px; margin-bottom: 12px;">
-              Chuyên trang chia sẻ Bài viết chuyên sâu, Mẹo thực chiến, Bảng phím tắt, Kho Prompt & Công cụ AI hàng đầu.
-            </p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <a href="https://github.com/iamtee999-sketch/tipsai" target="_blank" rel="noopener noreferrer" class="badge badge-purple" style="text-decoration: none;">⭐ GitHub Repo</a>
-              <a href="https://github.com/iamtee999-sketch/tipsai/issues" target="_blank" rel="noopener noreferrer" class="badge badge-cyan" style="text-decoration: none;">💬 Thảo luận & Góp ý</a>
-              <a href="sitemap.xml" class="badge badge-green" style="text-decoration: none;">🗺️ Sitemap XML</a>
+        <div class="container">
+          <div class="footer-grid">
+            <!-- Cột 1: Thương hiệu & Tiện ích nhanh -->
+            <div>
+              <a href="index.html" class="brand-logo">
+                <span class="brand-mark">✦</span>
+                <span>TipsAI</span>
+                <span class="brand-tag">iTee360</span>
+              </a>
+              <p class="footer-brand-desc">
+                Nền tảng chia sẻ kiến thức AI thực chiến: Bài viết chuyên sâu, Mẹo Prompt Trước/Sau, Bảng phím tắt & Công cụ AI chọn lọc giúp tăng gấp 10 lần hiệu suất.
+              </p>
+              <div class="footer-status-pill">
+                <span class="footer-status-dot"></span>
+                <span>Cập nhật liên tục • ${DATA.posts.length} Bài viết • ${DATA.tips.length} Mẹo • ${DATA.shortcuts.length} Phím tắt</span>
+              </div>
+              <div class="footer-quick-actions">
+                <button type="button" class="btn btn-secondary btn-sm" id="footerSearchBtn">
+                  🔍 Tìm nhanh <kbd class="keycap" style="margin-left: 4px; height: 22px; font-size: 11px;">Ctrl K</kbd>
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm" id="footerBookmarksBtn">
+                  🔖 Đã lưu (<span id="footerBookmarkCount">${state.bookmarkedIds.length}</span>)
+                </button>
+              </div>
+            </div>
+
+            <!-- Cột 2: Chuyên mục chính -->
+            <div>
+              <h3 class="footer-col-title">Khám Phá Chuyên Mục</h3>
+              <ul class="footer-links-list">
+                <li><a href="index.html" class="footer-link-item">🏠 Trang chủ & AI Intent</a></li>
+                <li><a href="blog.html" class="footer-link-item">📰 Bài viết & Blog chuyên sâu</a></li>
+                <li><a href="tips.html" class="footer-link-item">💡 Mẹo & Thủ thuật Trước/Sau</a></li>
+                <li><a href="shortcuts.html" class="footer-link-item">⌨️ Bảng Phím tắt & Tham số AI</a></li>
+                <li><a href="prompts.html" class="footer-link-item">⚡ Kho Prompt biến số động</a></li>
+                <li><a href="tools.html" class="footer-link-item">🧰 Danh bạ & So sánh AI Tools</a></li>
+              </ul>
+            </div>
+
+            <!-- Cột 3: Công cụ tương tác & Bài đọc tiêu điểm -->
+            <div>
+              <h3 class="footer-col-title">Công Cụ & Tiêu Điểm</h3>
+              <ul class="footer-links-list">
+                <li><a href="prompts.html#visualPromptBuilderSection" class="footer-link-item">🎛 Bộ Tạo Prompt Tự Động</a></li>
+                <li><a href="tools.html#aiLeaderboardSection" class="footer-link-item">🏆 Bảng Xếp Hạng AI 2026</a></li>
+                <li><a href="shortcuts.html" class="footer-link-item">🎮 Luyện Phản Xạ Phím Tắt</a></li>
+                <li><a href="post.html?id=post-1" class="footer-link-item">📘 Toàn tập Context Engineering</a></li>
+                <li><a href="post.html?id=post-2" class="footer-link-item">💻 Quy trình Cursor + Claude</a></li>
+                <li><a href="post.html?id=post-3" class="footer-link-item">⚖️ So sánh 4 ông lớn AI</a></li>
+              </ul>
+            </div>
+
+            <!-- Cột 4: Bản tin Mẹo AI & Cộng đồng -->
+            <div>
+              <h3 class="footer-col-title">Nhận Mẹo AI Mới Hàng Tuần</h3>
+              <div class="footer-newsletter-box">
+                <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5;">
+                  Nhận 3 mẹo tối ưu Prompt & workflow AI thực chiến nhất mỗi sáng thứ Hai (Hoàn toàn miễn phí).
+                </p>
+                <form class="footer-newsletter-form" id="footerNewsletterForm">
+                  <input
+                    type="email"
+                    id="footerNewsletterEmail"
+                    class="footer-newsletter-input"
+                    placeholder="Nhập email của bạn..."
+                    required
+                  />
+                  <button type="submit" class="btn btn-primary btn-sm">Đăng ký</button>
+                </form>
+                <div class="footer-community-badges">
+                  <a href="https://github.com/iamtee999-sketch/tipsai" target="_blank" rel="noopener noreferrer" class="badge badge-purple" style="text-decoration: none;">⭐ GitHub Repo</a>
+                  <a href="https://github.com/iamtee999-sketch/tipsai/issues" target="_blank" rel="noopener noreferrer" class="badge badge-cyan" style="text-decoration: none;">💬 Góp ý & Thảo luận</a>
+                  <a href="sitemap.xml" class="badge badge-green" style="text-decoration: none;">🗺️ Sitemap</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-            <a href="index.html" class="nav-link">Trang chủ</a>
-            <a href="blog.html" class="nav-link">Bài viết</a>
-            <a href="tips.html" class="nav-link">Mẹo AI</a>
-            <a href="shortcuts.html" class="nav-link">Phím tắt</a>
-            <a href="prompts.html" class="nav-link">Kho Prompt</a>
-            <a href="tools.html" class="nav-link">AI Tools</a>
+
+          <!-- Dòng bản quyền & Nút tiện ích dưới cùng -->
+          <div class="footer-bottom">
+            <div>
+              © 2026 <strong style="color: var(--text-primary);">TipsAI (iTee360)</strong> — Xây dựng vì cộng đồng ứng dụng AI thực chiến tại Việt Nam.
+            </div>
+            <div class="footer-bottom-actions">
+              <button type="button" class="btn btn-ghost btn-sm" id="footerThemeBtn">
+                ${state.theme === "dark" ? "☀️ Giao diện Sáng" : "🌙 Giao diện Tối"}
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" id="footerBackToTopBtn">
+                ↑ Lên đầu trang
+              </button>
+            </div>
           </div>
         </div>
       `;
+
+      document.getElementById("footerSearchBtn")?.addEventListener("click", openCommandPaletteModal);
+      document.getElementById("footerBookmarksBtn")?.addEventListener("click", openBookmarksModal);
+      document.getElementById("footerThemeBtn")?.addEventListener("click", () => {
+        const nextTheme = state.theme === "dark" ? "light" : "dark";
+        applyTheme(nextTheme);
+        showToast(
+          nextTheme === "dark" ? "🌙 Đã chuyển sang chế độ Tối" : "☀️ Đã chuyển sang chế độ Sáng"
+        );
+      });
+      document.getElementById("footerBackToTopBtn")?.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      document.getElementById("footerNewsletterForm")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const emailInput = document.getElementById("footerNewsletterEmail");
+        const email = emailInput?.value.trim();
+        if (!email) return;
+        const subs = JSON.parse(localStorage.getItem("tipsai_subscribers") || "[]");
+        if (!subs.includes(email)) {
+          subs.push(email);
+          localStorage.setItem("tipsai_subscribers", JSON.stringify(subs));
+        }
+        if (emailInput) emailInput.value = "";
+        showToast(`🎉 Đã đăng ký nhận bản tin Mẹo AI cho ${email}!`);
+      });
     }
   }
 
   function updateBookmarkBadge() {
     const badge = document.getElementById("bookmarkCountBadge");
     if (badge) badge.textContent = String(state.bookmarkedIds.length);
+    const footerBadge = document.getElementById("footerBookmarkCount");
+    if (footerBadge) footerBadge.textContent = String(state.bookmarkedIds.length);
   }
 
   // ==========================================================================
