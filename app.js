@@ -154,9 +154,10 @@
           </nav>
 
           <div class="nav-actions">
-            <button type="button" class="cmd-trigger" id="openCmdPaletteBtn" title="Tìm kiếm toàn trang (Ctrl + K)">
-              <span>🔍 Tìm nhanh</span>
-              <kbd class="keycap">Ctrl K</kbd>
+            <button type="button" class="cmd-trigger" id="openCmdPaletteBtn" title="Tìm kiếm toàn trang (Ctrl + K)" aria-label="Tìm kiếm toàn trang">
+              <span class="cmd-icon">🔍</span>
+              <span class="cmd-label">Tìm nhanh</span>
+              <kbd class="keycap cmd-kbd">Ctrl K</kbd>
             </button>
 
             <button type="button" class="icon-btn" id="openBookmarksBtn" title="Bộ sưu tập đã lưu" aria-label="Bộ sưu tập đã lưu">
@@ -174,22 +175,34 @@
               ${state.theme === "dark" ? "☀️" : "🌙"}
             </button>
 
-            <button type="button" class="icon-btn mobile-menu-btn" id="mobileMenuToggleBtn" aria-label="Mở menu di động">
+            <button type="button" class="icon-btn mobile-menu-btn" id="mobileMenuToggleBtn" aria-label="Mở menu di động" aria-expanded="false">
               ☰
             </button>
           </div>
         </div>
 
         <div class="mobile-nav-drawer" id="mobileNavDrawer">
-          ${navItems
-            .map(
-              (item) => `
-            <a href="${item.href}" class="nav-link ${activePage === item.id ? "active" : ""}">
-              ${item.label}
-            </a>
-          `
-            )
-            .join("")}
+          <div class="mobile-nav-grid">
+            ${navItems
+              .map(
+                (item) => `
+              <a href="${item.href}" class="nav-link ${
+                activePage === item.id || (activePage === "post" && item.id === "blog") ? "active" : ""
+              }">
+                ${item.label}
+              </a>
+            `
+              )
+              .join("")}
+          </div>
+          <div class="mobile-drawer-footer">
+            <button type="button" class="btn btn-secondary btn-sm" id="mobileDrawerSearchBtn" style="flex: 1;">
+              🔍 Tìm kiếm toàn trang
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="mobileDrawerBookmarksBtn">
+              🔖 Đã lưu (${state.bookmarkedIds.length})
+            </button>
+          </div>
         </div>
       `;
 
@@ -201,8 +214,35 @@
         );
       });
 
-      document.getElementById("mobileMenuToggleBtn")?.addEventListener("click", () => {
-        document.getElementById("mobileNavDrawer")?.classList.toggle("open");
+      const menuBtn = document.getElementById("mobileMenuToggleBtn");
+      const drawer = document.getElementById("mobileNavDrawer");
+      menuBtn?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = drawer?.classList.toggle("open");
+        menuBtn.innerHTML = isOpen ? "✕" : "☰";
+        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (drawer?.classList.contains("open") && !drawer.contains(e.target) && e.target !== menuBtn) {
+          drawer.classList.remove("open");
+          if (menuBtn) {
+            menuBtn.innerHTML = "☰";
+            menuBtn.setAttribute("aria-expanded", "false");
+          }
+        }
+      });
+
+      document.getElementById("mobileDrawerSearchBtn")?.addEventListener("click", () => {
+        drawer?.classList.remove("open");
+        if (menuBtn) menuBtn.innerHTML = "☰";
+        openCommandPaletteModal();
+      });
+
+      document.getElementById("mobileDrawerBookmarksBtn")?.addEventListener("click", () => {
+        drawer?.classList.remove("open");
+        if (menuBtn) menuBtn.innerHTML = "☰";
+        openBookmarksModal();
       });
     }
 
@@ -705,24 +745,24 @@
         <span style="color: var(--brand-primary); font-weight: 600;">${escapeHtml(post.categoryLabel)}</span>
       </nav>
 
-      <div class="post-cover-banner" style="background: ${post.coverStyle || "var(--brand-gradient)"}; border-radius: var(--radius-hero); margin-bottom: 28px; padding: 36px;">
+      <div class="post-cover-banner single-post-hero" style="background: ${post.coverStyle || "var(--brand-gradient)"}; border-radius: var(--radius-hero); margin-bottom: 28px;">
         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
           <span class="badge">★ ${escapeHtml(post.categoryLabel)}</span>
           <span class="badge">⏱ ${escapeHtml(post.readTime)}</span>
           <span class="badge">👁 ${post.views || 250} lượt đọc</span>
         </div>
 
-        <h1 style="font-family: var(--font-display); font-size: clamp(26px, 3.6vw, 40px); font-weight: 800; color: #FFFFFF; line-height: 1.24; margin-top: 18px; max-width: 960px;">
+        <h1 style="font-family: var(--font-display); font-size: clamp(24px, 3.6vw, 40px); font-weight: 800; color: #FFFFFF; line-height: 1.24; margin-top: 18px; max-width: 960px;">
           ${escapeHtml(post.title)}
         </h1>
 
-        <p style="color: rgba(255,255,255,0.90); font-size: 16px; max-width: 820px; margin-top: 12px;">
+        <p style="color: rgba(255,255,255,0.90); font-size: 15.5px; max-width: 820px; margin-top: 12px;">
           ${escapeHtml(post.excerpt)}
         </p>
 
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.16);">
-          <div style="font-size: 14px; color: #FFFFFF;">
-            ✍️ Tác giả: <strong>${escapeHtml(post.author)}</strong> (${escapeHtml(post.authorRole || "Chuyên gia AI")}) • Đăng ngày: ${escapeHtml(post.date)}
+          <div style="font-size: 13.5px; color: #FFFFFF;">
+            ✍️ Tác giả: <strong>${escapeHtml(post.author)}</strong> (${escapeHtml(post.authorRole || "Chuyên gia AI")}) • ${escapeHtml(post.date)}
           </div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
             <button type="button" class="upvote-btn ${isLiked ? "active" : ""}" id="singlePostLikeBtn">
@@ -739,7 +779,7 @@
       </div>
 
       <div class="single-post-layout">
-        <article class="card" style="padding: 32px;">
+        <article class="card single-post-article-card">
           <div class="post-thumb-wrap" style="border-radius: 14px; margin-bottom: 24px; border: 1px solid var(--border-default);">
             <img
               src="${escapeHtml(post.coverImage || "assets/covers/post-1.svg")}"
@@ -1502,6 +1542,8 @@
           <span class="badge badge-green">✓ Đã kiểm chứng thực tế</span>
         </div>
 
+        <div class="mobile-swipe-hint">↔ Vuốt ngang bảng để xem đầy đủ 5 cột</div>
+
         <div class="leaderboard-table-wrap">
           <table class="leaderboard-table">
             <thead>
@@ -2139,14 +2181,14 @@
         </h3>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+      <div class="quiz-options-grid">
         ${options
           .map(
             (opt) => `
           <button
             type="button"
             class="btn btn-secondary"
-            style="height: 52px; font-family: var(--font-mono); font-size: 14px;"
+            style="min-height: 50px; height: auto; padding: 10px 14px; font-family: var(--font-mono); font-size: 13.5px; white-space: normal; text-align: center;"
             data-quiz-opt="${escapeHtml(opt)}"
           >
             ${escapeHtml(opt)}

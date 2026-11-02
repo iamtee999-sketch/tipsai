@@ -1823,15 +1823,69 @@ kbd.keycap {
 
 .mobile-nav-drawer {
   display: none;
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  z-index: 180;
   background: var(--surface-1);
   border-bottom: 1px solid var(--border-default);
-  padding: 16px 24px;
+  padding: 16px 24px 20px;
   box-shadow: var(--shadow-md);
+  animation: revealUp var(--duration-normal) var(--ease-out);
 }
 
 .mobile-nav-drawer.open {
   display: grid;
+  gap: 14px;
+}
+
+.mobile-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
+}
+
+.mobile-nav-drawer .nav-link {
+  padding: 11px 14px;
+  font-size: 14.5px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-default);
+}
+
+.mobile-drawer-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-default);
+}
+
+.single-post-hero {
+  padding: 36px;
+}
+
+.single-post-article-card {
+  padding: 32px;
+}
+
+.quiz-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.mobile-swipe-hint {
+  display: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brand-primary);
+  background: var(--badge-purple-bg);
+  border: 1px solid var(--badge-purple-border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-top: 12px;
+  width: fit-content;
 }
 
 /* ==========================================================================
@@ -2084,9 +2138,13 @@ kbd.keycap {
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE BREAKPOINTS (iPad / Tablet & Mobile Optimization)
    ========================================================================== */
-@media (max-width: 1120px) {
+@media (max-width: 1180px) {
+  .nav-link {
+    padding: 7px 9px;
+    font-size: 13.5px;
+  }
   .cards-grid-3,
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2100,25 +2158,99 @@ kbd.keycap {
   }
   .toc-sidebar {
     position: static;
+    order: -1;
   }
   .bento-span-7, .bento-span-5, .bento-span-6, .bento-span-4, .bento-span-8 {
     grid-column: span 12;
   }
 }
 
-@media (max-width: 920px) {
+/* iPad Portrait & Tablets (<= 1024px) */
+@media (max-width: 1024px) {
   .nav-links,
-  .cmd-trigger span {
+  .cmd-trigger .cmd-label,
+  .cmd-trigger .cmd-kbd {
     display: none;
+  }
+  .cmd-trigger {
+    width: 38px;
+    padding: 0;
+    justify-content: center;
   }
   .mobile-menu-btn {
     display: inline-flex;
   }
+  .hub-nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .leaderboard-table {
+    min-width: 680px;
+  }
+  .mobile-swipe-hint {
+    display: inline-flex;
+  }
+  /* Ngăn iOS Safari tự động phóng to (Auto-zoom) khi bấm vào ô nhập liệu */
+  .input-field,
+  .select-field,
+  .var-input,
+  .comment-textarea,
+  .footer-newsletter-input,
+  .composer-input {
+    font-size: 16px;
+  }
 }
 
+/* Điện thoại di động & Màn hình nhỏ (<= 768px) */
 @media (max-width: 768px) {
-  .hero-shell, .page-banner-shell {
-    padding: 26px 20px;
+  .container {
+    padding: 0 16px;
+  }
+  .hero-section {
+    padding: 20px 0 16px;
+  }
+  .page-banner {
+    padding: 20px 0 8px;
+  }
+  .section-block {
+    padding: 22px 0;
+  }
+  .hero-shell,
+  .page-banner-shell,
+  .visual-builder-shell,
+  .leaderboard-shell,
+  .comments-shell,
+  .single-post-hero,
+  .single-post-article-card {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+  .hero-title {
+    font-size: 26px;
+    line-height: 1.24;
+  }
+  .hero-subtitle {
+    font-size: 14.5px;
+    margin-bottom: 18px;
+  }
+  .section-title {
+    font-size: 21px;
+  }
+  .composer-input-row {
+    flex-wrap: wrap;
+  }
+  .composer-input-row .btn {
+    width: 100%;
+    margin-top: 6px;
+  }
+  .composer-suggestions {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .composer-suggestions::-webkit-scrollbar {
+    display: none;
   }
   .hub-nav-grid,
   .cards-grid-3,
@@ -2129,22 +2261,116 @@ kbd.keycap {
   .guardrails-grid,
   .comment-form-grid,
   .post-compact-row,
-  .footer-grid {
+  .footer-grid,
+  .quiz-options-grid,
+  .mobile-nav-grid {
     grid-template-columns: 1fr;
   }
   .post-compact-thumb {
     width: 100%;
-    height: 150px;
+    height: 160px;
   }
   .filter-toolbar {
     flex-direction: column;
     align-items: stretch;
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  /* Thanh danh mục vuốt ngang mượt như App trên điện thoại */
+  .pill-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .pill-tabs::-webkit-scrollbar {
+    display: none;
   }
   .filter-search-group {
     width: 100%;
     flex-direction: column;
   }
-  .input-field, .select-field {
+  .input-field,
+  .select-field {
     width: 100%;
+  }
+  .shortcut-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .keycap-combo {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  kbd.keycap {
+    white-space: normal;
+    height: auto;
+    min-height: 28px;
+    padding: 4px 8px;
+    word-break: break-word;
+  }
+  .card {
+    padding: 18px 16px;
+  }
+  .card-footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .modal-backdrop {
+    padding: 12px;
+  }
+  .modal-dialog {
+    padding: 20px 16px;
+    max-height: 92vh;
+    border-radius: 18px;
+  }
+  .compare-floating-bar {
+    width: calc(100% - 24px);
+    bottom: 14px;
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    text-align: center;
+  }
+  .compare-floating-bar > div {
+    justify-content: center;
+  }
+  .site-footer {
+    margin-top: 40px;
+    padding: 36px 0 24px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .floating-top-btn {
+    bottom: 18px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+  .toast-container {
+    bottom: 72px;
+    right: 16px;
+    left: 16px;
+  }
+}
+
+/* Điện thoại màn hình nhỏ (<= 420px) */
+@media (max-width: 420px) {
+  .brand-tag {
+    display: none;
+  }
+  .brand-logo {
+    font-size: 18.5px;
+  }
+  .mobile-drawer-footer {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
