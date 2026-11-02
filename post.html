@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đọc Bài Viết — TipsAI Blog</title>
+  <meta name="description" content="Bài viết chuyên sâu về thủ thuật AI, Prompt Engineering và quy trình làm việc thông minh trên TipsAI." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="post">
+  <!-- Thanh tiến trình đọc bài (Reading Progress Bar) -->
+  <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+  <div class="ambient-aurora" aria-hidden="true">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+  </div>
+
+  <header class="navbar" id="siteNavbar"></header>
+
+  <main>
+    <section class="section-block" style="padding-top: 28px;">
+      <div class="container" id="singlePostContainer">
+        <!-- Rendered dynamically by app.js based on ?id=... or ?slug=... -->
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">📚 Bài viết liên quan bạn nên đọc</h2>
+            <p class="section-desc">Tiếp tục nâng cấp kỹ năng làm chủ AI với các hướng dẫn thực chiến khác.</p>
+          </div>
+          <a href="blog.html" class="btn btn-secondary btn-sm">Xem toàn bộ Blog →</a>
+        </div>
+        <div class="cards-grid-3" id="relatedPostsGrid">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

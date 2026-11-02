@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bảng Phím Tắt & Tham Số Lệnh AI — TipsAI</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="Bảng tra cứu nhanh phím tắt ChatGPT, Claude, Cursor, Gemini, Perplexity, Notion AI và các tham số lệnh tắt Midjourney trên Windows và macOS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="shortcuts">
+  <div class="ambient-aurora" aria-hidden="true">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+  </div>
+
+  <header class="navbar" id="siteNavbar"></header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <div class="page-banner-shell">
+          <div>
+            <span class="badge badge-cyan" style="margin-bottom: 10px;">⌨️ CHUYÊN TRANG PHÍM TẮT & THAM SỐ AI</span>
+            <h1 style="font-family: var(--font-display); font-size: 34px; font-weight: 800; line-height: 1.2;">
+              Bảng Phím Tắt Vàng Cho Mọi Công Cụ AI
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 15.5px; margin-top: 6px; max-width: 700px;">
+              Chuyển đổi tức thì giữa phím tắt <strong>Windows / Linux</strong> và <strong>macOS (⌘)</strong>. Bấm vào bất kỳ tổ hợp phím nào để sao chép nhanh.
+            </p>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <div class="os-toggle-group" role="group" aria-label="Chuyển đổi hệ điều hành phím tắt">
+              <button type="button" class="os-btn active" data-os="win">🪟 Windows / Linux</button>
+              <button type="button" class="os-btn" data-os="mac">🍎 macOS (⌘)</button>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" id="startShortcutQuizBtn">
+              🎮 Luyện phản xạ Phím tắt
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container">
+        <div class="filter-toolbar">
+          <div class="pill-tabs" id="shortcutAppTabs" role="tablist">
+            <!-- Rendered by app.js -->
+          </div>
+          <div class="filter-search-group">
+            <input
+              type="search"
+              id="shortcutSearchInput"
+              class="input-field"
+              placeholder="Tìm phím tắt (VD: copy code, inline edit, --ar...)"
+              aria-label="Tìm kiếm phím tắt"
+            />
+          </div>
+        </div>
+
+        <div class="shortcuts-grid" id="shortcutsGrid">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

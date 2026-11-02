@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài Viết & Blog Chuyên Sâu Về AI — TipsAI</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="Chuyên trang Bài viết & Blog AI: Hướng dẫn Context Engineering, AI Coding với Cursor, đánh giá chuyên sâu ChatGPT, Claude, Gemini và quy trình tự động hóa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="blog">
+  <div class="ambient-aurora" aria-hidden="true">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+  </div>
+
+  <header class="navbar" id="siteNavbar"></header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-banner">
+      <div class="container">
+        <div class="page-banner-shell">
+          <div>
+            <span class="badge badge-cyan" style="margin-bottom: 10px;">📰 CHUYÊN MỤC BÀI VIẾT & BLOG AI</span>
+            <h1 style="font-family: var(--font-display); font-size: 34px; font-weight: 800; line-height: 1.2;">
+              Bài Viết Chuyên Sâu & Hướng Dẫn Thực Chiến
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 15.5px; margin-top: 6px; max-width: 680px;">
+              Tổng hợp các bài phân tích chuyên sâu, quy trình kết hợp công cụ AI và những bài viết mới nhất do cộng đồng đóng góp.
+            </p>
+          </div>
+          <a href="tips.html" class="btn btn-secondary">
+            <span>💡 Khám phá Kho Mẹo AI →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter & Blog Posts Grid -->
+    <section class="section-block">
+      <div class="container">
+        <div class="filter-toolbar">
+          <div class="pill-tabs" id="blogCategoryTabs" role="tablist">
+            <!-- Rendered by app.js -->
+          </div>
+          <div class="filter-search-group">
+            <input
+              type="search"
+              id="blogSearchInput"
+              class="input-field"
+              placeholder="Tìm bài viết theo tiêu đề, tác giả, #tag..."
+              aria-label="Tìm kiếm bài viết"
+            />
+          </div>
+        </div>
+
+        <div class="cards-grid-3" id="blogPostsGrid">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

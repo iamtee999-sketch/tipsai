@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TipsAI — Trang Chủ | Chuyên Trang Bài Viết, Mẹo, Phím Tắt & Công Cụ AI</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="TipsAI (iTee360) — Chuyên trang chia sẻ bài viết chuyên sâu về AI, mẹo thủ thuật Prompt Engineering, bảng phím tắt và danh bạ AI Tools chọn lọc." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+  <div class="ambient-aurora" aria-hidden="true">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+  </div>
+
+  <!-- Shared Navbar (Rendered by app.js) -->
+  <header class="navbar" id="siteNavbar"></header>
+
+  <main>
+    <!-- ====================================================================
+         1. HERO SECTION & CỔNG ĐIỀU HƯỚNG 5 CHUYÊN MỤC
+         ==================================================================== -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-top-pill">
+            <span class="pulse-dot"></span>
+            <span>Cộng đồng Chia sẻ Kiến thức, Thủ thuật & Công cụ AI Thực Chiến</span>
+          </div>
+
+          <h1 class="hero-title">
+            Khám phá <span class="text-gradient">Bài viết, Mẹo AI, Phím tắt & Công cụ</span> giúp bạn làm việc thông minh gấp 10 lần.
+          </h1>
+
+          <p class="hero-subtitle">
+            Mỗi chuyên mục được tách riêng biệt để bạn tra cứu dễ dàng: Đọc bài phân tích chuyên sâu trên Blog, tra cứu nhanh bảng phím tắt hoặc tự đăng bài chia sẻ kinh nghiệm của bạn.
+          </p>
+
+          <!-- AI Native Intent Composer -->
+          <div class="ai-composer" role="search" aria-label="Trợ lý tìm kiếm thủ thuật theo ý định">
+            <div class="composer-input-row">
+              <span class="composer-sparkle" aria-hidden="true">✨</span>
+              <input
+                type="text"
+                id="intentInput"
+                class="composer-input"
+                placeholder="Bạn muốn dùng AI làm việc gì hôm nay? (VD: Viết code với Cursor, viết bài SEO không mùi AI, đọc PDF dài...)"
+                autocomplete="off"
+              />
+              <button type="button" class="btn btn-primary btn-sm" id="runIntentBtn">
+                <span>Gợi ý lộ trình</span>
+              </button>
+            </div>
+
+            <div class="composer-Suggestions">
+              <span class="suggestion-label">Chủ đề phổ biến:</span>
+              <button type="button" class="intent-chip" data-intent="Làm sao viết code và debug nhanh hơn với Cursor & Claude?">💻 Tăng tốc Code & Debug</button>
+              <button type="button" class="intent-chip" data-intent="Cách viết bài content marketing tự nhiên không có mùi AI">✍️ Viết Content không mùi AI</button>
+              <button type="button" class="intent-chip" data-intent="Mẹo chống AI bịa thông tin khi đọc PDF và nghiên cứu">📚 Chống AI bịa thông tin</button>
+              <button type="button" class="intent-chip" id="randomTipHeroBtn">🎲 Bốc 1 Mẹo ngẫu nhiên</button>
+            </div>
+          </div>
+
+          <div class="ai-intent-response" id="intentResponsePanel" hidden></div>
+
+          <!-- 5 Thẻ Chuyên Mục Tách Biệt -->
+          <div class="hub-nav-grid" id="homeHubPortals">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2. BÀI VIẾT & BLOG CHUYÊN SÂU MỚI NHẤT (TÂM ĐIỂM TRANG CHỦ)
+         ==================================================================== -->
+    <section class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">📰 Bài viết & Blog AI Mới Nhất</h2>
+            <p class="section-desc">Các bài phân tích chuyên sâu, hướng dẫn quy trình ứng dụng AI thực tế từ cộng đồng.</p>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="blog.html" class="btn btn-primary btn-sm">Xem tất cả bài viết →</a>
+          </div>
+        </div>
+
+        <div id="homeFeaturedBlog">
+          <!-- Rendered by app.js: 1 Featured Post + 3 Latest Posts -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. TÓM TẮT 3 MẸO & THỦ THUẬT NỔI BẬT (DẪN SANG TRANG TIPS.HTML)
+         ==================================================================== -->
+    <section class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">💡 Mẹo & Thủ Thuật AI Nổi Bật</h2>
+            <p class="section-desc">3 thủ thuật được bình chọn cao nhất tuần này. Xem đầy đủ bộ lọc chuyên sâu tại trang Mẹo AI.</p>
+          </div>
+          <a href="tips.html" class="btn btn-secondary btn-sm">Xem toàn bộ Kho Mẹo AI →</a>
+        </div>
+
+        <div class="cards-grid-3" id="homeTopTipsGrid">
+          <!-- Rendered by app.js (Top 3 only) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. TÓM TẮT GỌN: PHÍM TẮT VÀNG & AI TOOLS (DẪN SANG TRANG RIÊNG)
+         ==================================================================== -->
+    <section class="section-block">
+      <div class="container">
+        <div class="bento-grid">
+          <!-- Cột Trái: 4 Phím tắt vàng -->
+          <div class="card bento-span-6">
+            <div>
+              <div class="card-meta-top">
+                <span class="badge badge-cyan">⌨️ BẢNG PHÍM TẮT AI</span>
+                <div class="os-toggle-group" role="group" aria-label="Chọn hệ điều hành">
+                  <button type="button" class="os-btn active" data-os="win">Windows</button>
+                  <button type="button" class="os-btn" data-os="mac">macOS ⌘</button>
+                </div>
+              </div>
+              <h3 class="card-title">4 Tổ hợp phím tiết kiệm 30 phút mỗi ngày</h3>
+              <p class="card-summary">Tra cứu đầy đủ hơn 20+ phím tắt của ChatGPT, Claude, Cursor và Midjourney ở trang chuyên biệt.</p>
+
+              <div id="bentoQuickShortcuts" style="display: grid; gap: 10px; margin-bottom: 16px;"></div>
+            </div>
+
+            <div class="card-footer">
+              <a href="prompts.html" class="btn btn-ghost btn-sm">⚡ Mở Kho Prompt Động</a>
+              <a href="shortcuts.html" class="btn btn-secondary btn-sm">Mở trang Bảng Phím Tắt →</a>
+            </div>
+          </div>
+
+          <!-- Cột Phải: 3 AI Tools tiêu biểu -->
+          <div class="card bento-span-6">
+            <div>
+              <div class="card-meta-top">
+                <span class="badge badge-purple">🧰 DANH BẠ AI TOOLS</span>
+                <span class="badge badge-green">Cập nhật 2026</span>
+              </div>
+              <h3 class="card-title">Top Công cụ AI kèm Mẹo ẩn chuyên gia</h3>
+              <p class="card-summary">So sánh trực tiếp tính năng, chi phí và bí kíp sử dụng của từng công cụ AI hàng đầu.</p>
+
+              <div id="homeQuickToolsList" style="display: grid; gap: 10px; margin-bottom: 16px;"></div>
+            </div>
+
+            <div class="card-footer">
+              <span style="font-size: 13px; color: var(--text-muted);">Hỗ trợ so sánh ngang 3 công cụ</span>
+              <a href="tools.html" class="btn btn-secondary btn-sm">Mở Danh bạ AI Tools →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
