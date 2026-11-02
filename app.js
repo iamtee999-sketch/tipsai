@@ -53,8 +53,29 @@
 
   applyTheme(state.theme);
 
+  function parsePostDateScore(dateStr) {
+    const parts = String(dateStr || "").split("/");
+    if (parts.length !== 3) return 0;
+    return Number(parts[2]) * 10000 + Number(parts[1]) * 100 + Number(parts[0]);
+  }
+
+  function parsePostIdNum(id) {
+    const m = String(id || "").match(/post-(\d+)/);
+    return m ? Number(m[1]) : 0;
+  }
+
   function getAllPosts() {
-    return DATA.posts;
+    return [...DATA.posts].sort((a, b) => {
+      const dateDiff = parsePostDateScore(b.date) - parsePostDateScore(a.date);
+      if (dateDiff !== 0) return dateDiff;
+      const numA = parsePostIdNum(a.id);
+      const numB = parsePostIdNum(b.id);
+      // Ưu tiên các bài viết mới xuất bản (post-6..post-14) hiển thị trước theo thứ tự
+      const isNewBatchA = numA >= 6 ? 1 : 0;
+      const isNewBatchB = numB >= 6 ? 1 : 0;
+      if (isNewBatchA !== isNewBatchB) return isNewBatchB - isNewBatchA;
+      return numA - numB;
+    });
   }
 
   function getAllTips() {
@@ -465,8 +486,8 @@
     const homeBlogContainer = document.getElementById("homeFeaturedBlog");
     if (homeBlogContainer) {
       const posts = getAllPosts();
-      const featuredPost = posts[0];
-      const sidePosts = posts.slice(1, 4);
+      const featuredPost = posts.find((p) => p.featured) || posts[0];
+      const sidePosts = posts.filter((p) => p.id !== featuredPost?.id).slice(0, 3);
 
       if (featuredPost) {
         homeBlogContainer.innerHTML = `
@@ -870,8 +891,8 @@
 
     const relatedGrid = document.getElementById("relatedPostsGrid");
     if (relatedGrid) {
-      const related = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
-      relatedGrid.innerHTML = related
+      const latestPosts = allPosts.filter((p) => p.id !== post.id).slice(0, 6);
+      relatedGrid.innerHTML = latestPosts
         .map(
           (p) => `
           <article class="featured-post-card">
@@ -884,6 +905,7 @@
                   loading="lazy"
                 />
                 <div class="post-thumb-badges">
+                  <span class="badge">🆕 MỚI NHẤT</span>
                   <span class="badge">${escapeHtml(p.categoryLabel)}</span>
                   <span class="badge">${escapeHtml(p.readTime)}</span>
                 </div>
