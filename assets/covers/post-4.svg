@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="800" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="55%" stop-color="#312E81"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" fill="url(#bg4)"/>
+  <rect x="430" y="70" width="320" height="96" rx="12" fill="#EF4444" fill-opacity="0.15" stroke="#FCA5A5" stroke-opacity="0.4"/>
+  <text x="452" y="102" fill="#FCA5A5" font-family="monospace" font-size="13" font-weight="bold">❌ TỪ VỰNG SÁO RỖNG BỊ CẤM</text>
+  <text x="452" y="130" fill="#FECACA" font-family="sans-serif" font-size="14">"Trong kỷ nguyên số", "Chìa khóa vàng"</text>
+
+  <rect x="430" y="186" width="320" height="106" rx="12" fill="#22C55E" fill-opacity="0.16" stroke="#86EFAC" stroke-opacity="0.45"/>
+  <text x="452" y="218" fill="#86EFAC" font-family="monospace" font-size="13" font-weight="bold">✅ VĂN PHONG TỰ NHIÊN CHUYÊN GIA</text>
+  <text x="452" y="246" fill="#DCFCE7" font-family="sans-serif" font-size="14">Đi thẳng vào số liệu + Câu ngắn gãy gọn</text>
+</svg>

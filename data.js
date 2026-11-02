@@ -37,6 +37,7 @@ window.TIPSAI_DATA = {
       views: 3420,
       likes: 284,
       featured: true,
+      coverImage: "assets/covers/post-1.svg",
       coverStyle: "linear-gradient(135deg, #2E1065 0%, #4C1D95 45%, #0284C7 100%)",
       coverBadge: "BÀI VIẾT TIÊU ĐIỂM",
       excerpt: "Prompt Engineering truyền thống đang nhường chỗ cho Context Engineering. Khám phá cách thiết kế bộ nhớ nền, tài liệu tham chiếu và rào chắn đầu ra để AI hiểu ý bạn chỉ sau 1 câu ngắn.",
@@ -87,6 +88,7 @@ Viết 3 kịch bản video ngắn 45 giây giới thiệu tính năng tự đ�
       views: 2890,
       likes: 245,
       featured: false,
+      coverImage: "assets/covers/post-2.svg",
       coverStyle: "linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0891B2 100%)",
       coverBadge: "AI CODING",
       excerpt: "Sai lầm lớn nhất khi dùng AI viết code là yêu cầu nó 'tạo cả ứng dụng' trong 1 câu lệnh. Đây là quy trình 4 bước chia để trị giúp code sạch, không bug chồng bug.",
@@ -121,6 +123,7 @@ Viết 3 kịch bản video ngắn 45 giây giới thiệu tính năng tự đ�
       views: 4120,
       likes: 319,
       featured: false,
+      coverImage: "assets/covers/post-3.svg",
       coverStyle: "linear-gradient(135deg, #1E1B4B 0%, #3B0764 50%, #0D9488 100%)",
       coverBadge: "REVIEW CHUYÊN SÂU",
       excerpt: "Đừng dùng duy nhất 1 công cụ AI cho mọi việc. Bảng phân tích chi tiết thế mạnh thực sự của 4 ông lớn AI trong viết lách, lập trình, đọc PDF dài và tra cứu tin tức.",
@@ -151,6 +154,7 @@ Viết 3 kịch bản video ngắn 45 giây giới thiệu tính năng tự đ�
       views: 2150,
       likes: 198,
       featured: false,
+      coverImage: "assets/covers/post-4.svg",
       coverStyle: "linear-gradient(135deg, #111827 0%, #312E81 55%, #0369A1 100%)",
       coverBadge: "THỦ THUẬT VIẾT",
       excerpt: "Làm sao để người đọc không nhận ra bài viết có sự trợ giúp của AI? Hãy áp dụng bộ lọc từ vựng cấm và kỹ thuật biên tập nhịp điệu câu dưới đây.",
@@ -180,6 +184,7 @@ Viết 3 kịch bản video ngắn 45 giây giới thiệu tính năng tự đ�
       views: 1940,
       likes: 176,
       featured: false,
+      coverImage: "assets/covers/post-5.svg",
       coverStyle: "linear-gradient(135deg, #064E3B 0%, #1E1B4B 60%, #4F46E5 100%)",
       coverBadge: "WORKFLOW",
       excerpt: "Hướng dẫn từng bước tổ chức hàng chục file PDF, slide bài giảng, hợp đồng và video YouTube thành một trợ lý cá nhân chỉ trả lời dựa trên tài liệu chuẩn.",
@@ -869,5 +874,182 @@ Viết 3 kịch bản video ngắn 45 giây giới thiệu tính năng tự đ�
       quickShortcut: "--ar 16:9 --s 250 --no watermark",
       targetPage: "tools.html"
     }
-  ]
+  ],
+
+  // ==========================================================================
+  // BẢNG XẾP HẠNG AI THEO NHU CẦU THỰC TẾ (Dùng AI nào cho việc gì?)
+  // ==========================================================================
+  aiLeaderboard: [
+    {
+      task: "✍️ Viết lách tiếng Việt, Content & Copywriting tự nhiên",
+      winner: "Claude 3.7 Sonnet",
+      winnerReason: "Câu chữ mượt mà, giàu cảm xúc, ít dùng từ sáo rỗng kiểu dịch thuật nhất.",
+      runnerUp: "ChatGPT (GPT-4o Canvas)",
+      bestFree: "Claude Free + Gemini 2.5 Flash",
+      proWorkflow: "Nạp 3 bài mẫu vào Claude Projects + đính kèm bộ lọc 10 từ cấm hậu kiểm."
+    },
+    {
+      task: "💻 Lập trình Web/App, Refactor & Debug đa file",
+      winner: "Cursor IDE + Claude Sonnet",
+      winnerReason: "Hiểu toàn bộ codebase, sửa trực tiếp nhiều file và tự chạy lệnh kiểm tra lỗi.",
+      runnerUp: "ChatGPT o3-mini / Windsurf",
+      bestFree: "Google AI Studio (Gemini Coding)",
+      proWorkflow: "Khóa quy chuẩn bằng file AGENTS.md ở gốc dự án + dùng Ctrl+K sửa từng hàm nhỏ."
+    },
+    {
+      task: "📚 Đọc PDF dài hàng trăm trang, Hợp đồng & Chống bịa",
+      winner: "Google NotebookLM",
+      winnerReason: "Tỷ lệ bịa đặt gần như 0%, mọi câu trả lời đều có nút nhảy tới đúng trang PDF gốc.",
+      runnerUp: "Gemini 1.5/2.5 Pro (2M Context)",
+      bestFree: "NotebookLM (Miễn phí 100%)",
+      proWorkflow: "Gom 20–50 tài liệu vào 1 Notebook + bật Audio Overview để nghe tóm tắt dạng Podcast."
+    },
+    {
+      task: "🌐 Tra cứu tin tức thời gian thực & Số liệu có nguồn",
+      winner: "Perplexity AI (Deep Research)",
+      winnerReason: "Tự động duyệt hàng chục nguồn web uy tín và gắn link trích dẫn minh bạch từng câu.",
+      runnerUp: "ChatGPT Search",
+      bestFree: "Perplexity Free / Google AI Mode",
+      proWorkflow: "Bật Focus: Academic khi cần tìm bài báo khoa học hoặc số liệu nghiên cứu chính통."
+    },
+    {
+      task: "🎨 Thiết kế Hình ảnh Quảng cáo, Nhân vật & Chữ trên ảnh",
+      winner: "Midjourney v7 / Flux.1 Pro",
+      winnerReason: "Ánh sáng điện ảnh đỉnh cao, giữ đồng nhất khuôn mặt (--cref) và vẽ chữ chuẩn xác.",
+      runnerUp: "ChatGPT ImageGen (GPT-4o)",
+      bestFree: "Flux.1 Schnell / Ideogram Free",
+      proWorkflow: "Dùng ChatGPT tạo ảnh có chữ tiếng Việt hoặc dùng Midjourney --sref khóa màu thương hiệu."
+    },
+    {
+      task: "📊 Làm Slide thuyết trình & Sơ đồ tư duy từ văn bản",
+      winner: "Gamma App + Napkin AI",
+      winnerReason: "Biến dàn ý chữ thô thành bộ Slide hoàn chỉnh và sơ đồ Infographic chỉ trong 30 giây.",
+      runnerUp: "Canva Magic Design",
+      bestFree: "Napkin AI + Gamma (Gói Credit miễn phí)",
+      proWorkflow: "Nhờ Claude lên dàn ý chi tiết từng slide trước → Dán vào Gamma chế độ Paste Text."
+    }
+  ],
+
+  // ==========================================================================
+  // BỘ TẠO PROMPT TỰ ĐỘNG BẰNG TÍCH CHỌN (1-Click Visual Prompt Builder)
+  // ==========================================================================
+  visualPromptBuilder: {
+    roles: [
+      { id: "role-copywriter", label: "✍️ Giám đốc Sáng tạo & Copywriter", promptText: "Hãy đóng vai Giám đốc Sáng tạo & Copywriter 10 năm kinh nghiệm, chuyên viết nội dung chuyển đổi cao và tự nhiên." },
+      { id: "role-architect", label: "💻 Principal Software Architect", promptText: "Hãy đóng vai Principal Software Architect chuyên thiết kế hệ thống Clean Code, bảo mật, hiệu năng cao và dễ bảo trì." },
+      { id: "role-growth", label: "📈 Chuyên gia Chiến lược Marketing & Growth", promptText: "Hãy đóng vai Giám đốc Tăng trưởng (CMO / Growth Lead) am hiểu tâm lý khách hàng và tối ưu phễu chuyển đổi thực chiến." },
+      { id: "role-analyst", label: "📊 Chuyên gia Phân tích Dữ liệu & Nghiên cứu", promptText: "Hãy đóng vai Chuyên gia Phân tích Dữ liệu & Nghiên cứu thị trường, luôn dựa trên bằng chứng và số liệu định lượng." },
+      { id: "role-critic", label: "⚖️ Nhà đầu tư Phản biện (Devil's Advocate)", promptText: "Hãy đóng vai Nhà đầu tư mạo hiểm khắt khe. Đừng khen ngợi xã giao, hãy tập trung mổ xẻ lỗ hổng và rủi ro thực tế." },
+      { id: "role-tutor", label: "🎓 Gia sư Phương pháp Feynman", promptText: "Hãy đóng vai Gia sư xuất sắc áp dụng phương pháp Feynman: giải thích mọi khái niệm phức tạp bằng ngôn từ cực kỳ dễ hiểu." }
+    ],
+    tasks: [
+      { id: "task-article", label: "Viết bài chuyên sâu / Bài đăng mạng xã hội", placeholder: "VD: Viết bài chia sẻ 5 cách ứng dụng AI giúp dân văn phòng tiết kiệm 2 giờ mỗi ngày" },
+      { id: "task-code", label: "Viết Code / Refactor / Tìm nguyên nhân Bug", placeholder: "VD: Tối ưu hàm tìm kiếm sản phẩm trong JavaScript để không bị giật lag khi gõ nhanh" },
+      { id: "task-plan", label: "Lập kế hoạch 30 ngày / Chiến lược triển khai", placeholder: "VD: Lập kế hoạch ra mắt kênh TikTok/Blog chia sẻ thủ thuật công nghệ trong 30 ngày" },
+      { id: "task-summarize", label: "Tóm tắt & Rút trích luận điểm từ tài liệu", placeholder: "VD: Rút trích 7 quyết định quan trọng nhất và rủi ro từ biên bản họp / tài liệu đính kèm" },
+      { id: "task-audit", label: "Phản biện & Tìm lỗ hổng ý tưởng / CV / Sản phẩm", placeholder: "VD: Rà soát lỗ hổng trong kế hoạch kinh doanh quán cà phê hoặc tối ưu CV ứng tuyển" }
+    ],
+    formats: [
+      { id: "fmt-steps", label: "📋 Hướng dẫn từng bước (Step-by-Step) kèm ví dụ", promptText: "Trình bày theo từng bước hành động cụ thể (Step-by-step), mỗi bước đều đi kèm ví dụ thực tế áp dụng được ngay." },
+      { id: "fmt-table", label: "📊 Bảng so sánh trực quan (Markdown Table) + Đề xuất", promptText: "Trình bày dưới dạng Bảng so sánh Markdown rõ ràng giữa các phương án, sau đó chốt lại 1 khuyến nghị tối ưu nhất." },
+      { id: "fmt-before-after", label: "🔄 Đối chiếu Trước / Sau (Before vs. After)", promptText: "Luôn đưa ra ví dụ đối chiếu trực tiếp: [❌ Cách làm cũ thường sai] và [✅ Cách làm mới tối ưu]." },
+      { id: "fmt-xml", label: "🧱 Cấu trúc phân tầng (Tóm tắt điều hành → Chi tiết → Checklist)", promptText: "Chia bố cục làm 3 phần rõ rệt: (1) Tóm tắt cốt lõi trong 3 dòng, (2) Phân tích chi tiết, (3) Checklist kiểm tra nhanh." }
+    ],
+    tones: [
+      { id: "tone-practical", label: "🎯 Thực chiến, trực diện, không vòng vo", promptText: "Giọng văn thực chiến, gãy gọn, đi thẳng vào giải pháp ngay từ câu đầu tiên, không mở bài dài dòng." },
+      { id: "tone-story", label: "🔥 Cuốn hút, giàu cảm xúc & gần gũi", promptText: "Giọng văn tự nhiên như đang trò chuyện với đồng nghiệp, giàu hình ảnh thực tế, câu ngắn và câu vừa đan xen nhịp nhàng." },
+      { id: "tone-exec", label: "💼 Chuyên nghiệp, sắc bén (Chuẩn C-Level)", promptText: "Giọng văn chuyên gia sắc bén, khách quan, ưu tiên con số, luận điểm logic và tiêu chí đo lường rõ ràng." }
+    ],
+    guardrails: [
+      { id: "gr-no-cliche", label: "🚫 Cấm tuyệt đối văn phong sáo rỗng ('trong kỷ nguyên số', 'bùng nổ', 'chìa khóa vàng')", checked: true, promptText: "CẤM TUYỆT ĐỐI các cụm từ sáo rỗng mùi AI như: 'Trong kỷ nguyên số ngày nay', 'Không thể phủ nhận', 'Bùng nổ', 'Đột phá', 'Chìa khóa vàng', 'Không chỉ... mà còn'." },
+      { id: "gr-ask-first", label: "❓ Hỏi lại 3 câu làm rõ ngữ cảnh nếu thông tin đầu vào chưa đủ (Reverse Prompting)", checked: true, promptText: "Nếu thông tin tôi cung cấp còn điểm nào chưa rõ, hãy liệt kê 3 câu hỏi ngắn gọn để làm rõ ngữ cảnh trước hoặc đặt giả định hợp lý nhất." },
+      { id: "gr-no-hallucination", label: "🔒 Chống bịa đặt: Không tự chế số liệu, nếu không chắc chắn phải ghi rõ", checked: true, promptText: "Tuyệt đối KHÔNG tự chế số liệu thống kê, tên tài liệu hay dẫn chứng không có thật. Nếu một thông tin chưa được kiểm chứng, hãy ghi rõ [Cần xác minh thêm]." },
+      { id: "gr-self-critique", label: "🔍 Tự kiểm tra chéo (Self-Critique) và nâng cấp câu trả lời trước khi xuất ra", checked: false, promptText: "Ở cuối câu trả lời, hãy tự đóng vai người phản biện để chỉ ra 1 điểm yếu trong chính phương án vừa nêu và cách khắc phục điểm yếu đó." }
+    ]
+  },
+
+  // ==========================================================================
+  // BÌNH LUẬN CỘNG ĐỒNG MẪU & KÊNH KẾT NỐI (Article Discussions & Community Hub)
+  // ==========================================================================
+  communityChannels: [
+    {
+      name: "GitHub Discussions",
+      badge: "Hỏi đáp & Góp ý bài viết",
+      desc: "Nơi thảo luận chuyên sâu, báo lỗi hoặc đề xuất chủ đề mới trực tiếp trên kho mã nguồn mở.",
+      url: "https://github.com/iamtee999-sketch/tipsai/issues"
+    },
+    {
+      name: "Cộng đồng TipsAI (iTee360)",
+      badge: "Chia sẻ Prompt & Workflow",
+      desc: "Cùng hàng nghìn thành viên chia sẻ mẹo dùng ChatGPT, Claude, Cursor và bộ công cụ AI mỗi ngày.",
+      url: "https://github.com/iamtee999-sketch/tipsai"
+    }
+  ],
+
+  defaultComments: {
+    "post-1": [
+      {
+        id: "cmt-101",
+        author: "Trần Đức Anh",
+        role: "Product Manager",
+        date: "02/11/2026",
+        avatar: "ĐA",
+        content: "Kỹ thuật bọc thẻ XML `<boi_canh_du_an>` và `<du_lieu_tham_chieu>` thực sự thay đổi hoàn toàn cách mình dùng Claude. Giờ chỉ cần 1 file ngữ cảnh cố định là câu trả lời chuẩn ngay lần đầu!",
+        likes: 19
+      },
+      {
+        id: "cmt-102",
+        author: "Lê Minh Châu",
+        role: "Content Strategist",
+        date: "02/11/2026",
+        avatar: "MC",
+        content: "Mình đã thử tạo file `boi-canh-ca-nhan.md` như bài viết hướng dẫn, tiết kiệm được ít nhất 30 phút giải thích lại từ đầu mỗi sáng. Cảm ơn tác giả!",
+        likes: 14
+      }
+    ],
+    "post-2": [
+      {
+        id: "cmt-201",
+        author: "Nguyễn Quốc Huy",
+        role: "Frontend Developer",
+        date: "01/11/2026",
+        avatar: "QH",
+        content: "Chuẩn luôn! Trước đây mình toàn bảo AI sửa cả trang một lúc nên code cứ lỗi chồng lỗi. Từ ngày dùng `AGENTS.md` + `Ctrl + K` cho từng hàm nhỏ thì code sạch hơn hẳn.",
+        likes: 23
+      }
+    ],
+    "post-3": [
+      {
+        id: "cmt-301",
+        author: "Phạm Thanh Thảo",
+        role: "Marketing Lead",
+        date: "31/10/2026",
+        avatar: "TT",
+        content: "Combo Perplexity (tìm số liệu) → NotebookLM (đọc PDF) → Claude (viết bài) đúng là chân ái hiện tại. Không còn cảnh ChatGPT tự chế số liệu báo cáo nữa.",
+        likes: 31
+      }
+    ],
+    "post-4": [
+      {
+        id: "cmt-401",
+        author: "Vũ Hoàng Long",
+        role: "Copywriter",
+        date: "29/10/2026",
+        avatar: "HL",
+        content: "Đoạn prompt hậu kiểm cấm cụm 'trong kỷ nguyên số' và 'không chỉ... mà còn' quá đỉnh. Dán vào cái là bài viết hết sạch mùi robot!",
+        likes: 27
+      }
+    ],
+    "post-5": [
+      {
+        id: "cmt-501",
+        author: "Đỗ Khánh Linh",
+        role: "Nghiên cứu sinh",
+        date: "26/10/2026",
+        avatar: "KL",
+        content: "Tính năng bấm vào số trích dẫn nhảy thẳng đến đoạn văn gốc trong PDF của NotebookLM cứu mình cả kỳ làm luận văn vừa rồi.",
+        likes: 18
+      }
+    ]
+  }
 };

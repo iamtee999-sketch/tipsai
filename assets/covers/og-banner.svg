@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="ogbg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#2E1065"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C5CFC"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogbg)"/>
+  <circle cx="1020" cy="140" r="260" fill="#00D4FF" fill-opacity="0.16"/>
+  <circle cx="180" cy="520" r="280" fill="#7C5CFC" fill-opacity="0.22"/>
+  <rect x="80" y="80" width="68" height="68" rx="18" fill="url(#accent)"/>
+  <text x="101" y="128" fill="#FFFFFF" font-family="sans-serif" font-size="38" font-weight="bold">✦</text>
+  <text x="168" y="128" fill="#FFFFFF" font-family="sans-serif" font-size="42" font-weight="bold">TipsAI — iTee360 Hub</text>
+  <text x="80" y="250" fill="#FFFFFF" font-family="sans-serif" font-size="60" font-weight="800">Chuyên Trang Mẹo, Phím Tắt</text>
+  <text x="80" y="330" fill="#38BDF8" font-family="sans-serif" font-size="60" font-weight="800">&amp; Công Cụ AI Thực Chiến</text>
+  <text x="80" y="410" fill="#CBD5E1" font-family="sans-serif" font-size="28">Bài viết chuyên sâu • So sánh Prompt Trước/Sau • Phím tắt ChatGPT, Claude, Cursor</text>
+  <rect x="80" y="470" width="460" height="64" rx="16" fill="#FFFFFF" fill-opacity="0.12" stroke="#38BDF8" stroke-opacity="0.5"/>
+  <text x="112" y="511" fill="#7DD3FC" font-family="monospace" font-size="24" font-weight="bold">iamtee999-sketch.github.io/tipsai</text>
+</svg>

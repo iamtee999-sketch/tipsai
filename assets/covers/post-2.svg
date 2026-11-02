@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="800" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#090D16"/>
+      <stop offset="55%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0891B2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" fill="url(#bg2)"/>
+  <circle cx="650" cy="210" r="190" fill="#06B6D4" fill-opacity="0.14"/>
+  <!-- IDE Window Mockup -->
+  <rect x="420" y="55" width="340" height="260" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+  <circle cx="444" cy="77" r="6" fill="#EF4444"/>
+  <circle cx="464" cy="77" r="6" fill="#F59E0B"/>
+  <circle cx="484" cy="77" r="6" fill="#22C55E"/>
+  <text x="510" y="81" fill="#94A3B8" font-family="monospace" font-size="12">cursor — AGENTS.md</text>
+  <line x1="420" y1="96" x2="760" y2="96" stroke="#1E293B"/>
+  <text x="442" y="128" fill="#38BDF8" font-family="monospace" font-size="13"># Spec → UI → Logic → Verify</text>
+  <text x="442" y="156" fill="#A78BFA" font-family="monospace" font-size="13">Ctrl + I  // Multi-file Agent</text>
+  <text x="442" y="184" fill="#34D399" font-family="monospace" font-size="13">Ctrl + K  // Inline Refactor</text>
+  <text x="442" y="212" fill="#FBBF24" font-family="monospace" font-size="13">@Files    // Scoped Context</text>
+  <rect x="442" y="236" width="296" height="54" rx="8" fill="#1E293B"/>
+  <text x="458" y="268" fill="#E2E8F0" font-family="monospace" font-size="13">✓ Build succeeded in 1.4s (0 bugs)</text>
+</svg>

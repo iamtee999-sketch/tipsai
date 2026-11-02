@@ -204,18 +204,23 @@
     const footerEl = document.getElementById("siteFooter");
     if (footerEl) {
       footerEl.innerHTML = `
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-          <div>
-            <a href="index.html" class="brand-logo" style="margin-bottom: 6px;">
+        <div class="container" style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+          <div style="max-width: 460px;">
+            <a href="index.html" class="brand-logo" style="margin-bottom: 8px;">
               <span class="brand-mark">✦</span>
               <span>TipsAI</span>
               <span class="brand-tag">iTee360</span>
             </a>
-            <p style="color: var(--text-secondary); font-size: 13.5px;">
-              Chuyên trang chia sẻ Bài viết chuyên sâu, Mẹo thực chiến, Bảng phím tắt & Công cụ AI hàng đầu.
+            <p style="color: var(--text-secondary); font-size: 13.5px; margin-bottom: 12px;">
+              Chuyên trang chia sẻ Bài viết chuyên sâu, Mẹo thực chiến, Bảng phím tắt, Kho Prompt & Công cụ AI hàng đầu.
             </p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="https://github.com/iamtee999-sketch/tipsai" target="_blank" rel="noopener noreferrer" class="badge badge-purple" style="text-decoration: none;">⭐ GitHub Repo</a>
+              <a href="https://github.com/iamtee999-sketch/tipsai/issues" target="_blank" rel="noopener noreferrer" class="badge badge-cyan" style="text-decoration: none;">💬 Thảo luận & Góp ý</a>
+              <a href="sitemap.xml" class="badge badge-green" style="text-decoration: none;">🗺️ Sitemap XML</a>
+            </div>
           </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
             <a href="index.html" class="nav-link">Trang chủ</a>
             <a href="blog.html" class="nav-link">Bài viết</a>
             <a href="tips.html" class="nav-link">Mẹo AI</a>
@@ -313,26 +318,34 @@
           <div class="blog-featured-grid">
             <article class="featured-post-card">
               <a href="post.html?id=${encodeURIComponent(featuredPost.id)}" style="text-decoration: none; color: inherit;">
-                <div class="post-cover-banner" style="background: ${featuredPost.coverStyle || "var(--brand-gradient)"};">
-                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+                <div class="post-thumb-wrap">
+                  <img
+                    src="${escapeHtml(featuredPost.coverImage || "assets/covers/post-1.svg")}"
+                    alt="${escapeHtml(featuredPost.title)}"
+                    class="post-thumb-img"
+                    loading="lazy"
+                  />
+                  <div class="post-thumb-badges">
                     <span class="badge">★ ${escapeHtml(featuredPost.coverBadge || "TIÊU ĐIỂM")}</span>
                     <span class="badge">${escapeHtml(featuredPost.categoryLabel)}</span>
-                  </div>
-                  <div style="margin-top: 28px;">
-                    <div style="font-size: 12.5px; color: rgba(255,255,255,0.85); margin-bottom: 6px;">
-                      ✍️ ${escapeHtml(featuredPost.author)} • ${escapeHtml(featuredPost.date)} • ${escapeHtml(featuredPost.readTime)}
-                    </div>
-                    <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 800; line-height: 1.3; color: #FFFFFF;">
-                      ${escapeHtml(featuredPost.title)}
-                    </h3>
                   </div>
                 </div>
               </a>
 
               <div class="post-body">
-                <p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 18px;">
-                  ${escapeHtml(featuredPost.excerpt)}
-                </p>
+                <div>
+                  <div style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    ✍️ ${escapeHtml(featuredPost.author)} • ${escapeHtml(featuredPost.date)} • ${escapeHtml(featuredPost.readTime)}
+                  </div>
+                  <a href="post.html?id=${encodeURIComponent(featuredPost.id)}" style="text-decoration: none; color: inherit;">
+                    <h3 style="font-family: var(--font-display); font-size: 22px; font-weight: 800; line-height: 1.3; color: var(--text-primary); margin-bottom: 10px;">
+                      ${escapeHtml(featuredPost.title)}
+                    </h3>
+                  </a>
+                  <p style="color: var(--text-secondary); font-size: 14.5px; margin-bottom: 18px;">
+                    ${escapeHtml(featuredPost.excerpt)}
+                  </p>
+                </div>
                 <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
                   <div style="display: flex; gap: 6px; flex-wrap: wrap;">
                     ${(featuredPost.tags || [])
@@ -351,19 +364,27 @@
                 .map(
                   (post) => `
                 <a href="post.html?id=${encodeURIComponent(post.id)}" class="post-compact-item" style="text-decoration: none; color: inherit;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
-                    <span class="badge badge-purple">${escapeHtml(post.categoryLabel)}</span>
-                    <span style="font-size: 12px; color: var(--text-muted);">${escapeHtml(post.date)} • ${escapeHtml(post.readTime)}</span>
-                  </div>
-                  <h4 style="font-family: var(--font-display); font-size: 16.5px; font-weight: 700; line-height: 1.35; color: var(--text-primary);">
-                    ${escapeHtml(post.title)}
-                  </h4>
-                  <p style="font-size: 13.5px; color: var(--text-secondary); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                    ${escapeHtml(post.excerpt)}
-                  </p>
-                  <div style="display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; color: var(--brand-primary); font-weight: 600;">
-                    <span>✍️ ${escapeHtml(post.author)}</span>
-                    <span>Đọc bài →</span>
+                  <div class="post-compact-row">
+                    <div class="post-compact-thumb">
+                      <img
+                        src="${escapeHtml(post.coverImage || "assets/covers/post-2.svg")}"
+                        alt="${escapeHtml(post.title)}"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                        <span class="badge badge-purple" style="font-size: 11px;">${escapeHtml(post.categoryLabel)}</span>
+                        <span style="font-size: 11.5px; color: var(--text-muted);">${escapeHtml(post.readTime)}</span>
+                      </div>
+                      <h4 style="font-family: var(--font-display); font-size: 15.5px; font-weight: 700; line-height: 1.35; color: var(--text-primary);">
+                        ${escapeHtml(post.title)}
+                      </h4>
+                      <div style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--brand-primary); font-weight: 600;">
+                        <span>✍️ ${escapeHtml(post.author)}</span>
+                        <span>Đọc bài →</span>
+                      </div>
+                    </div>
                   </div>
                 </a>
               `
@@ -483,21 +504,27 @@
         (post) => `
         <article class="featured-post-card">
           <a href="post.html?id=${encodeURIComponent(post.id)}" style="text-decoration: none; color: inherit;">
-            <div class="post-cover-banner-sm" style="background: ${post.coverStyle || "var(--brand-gradient)"};">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="post-thumb-wrap">
+              <img
+                src="${escapeHtml(post.coverImage || "assets/covers/post-1.svg")}"
+                alt="${escapeHtml(post.title)}"
+                class="post-thumb-img"
+                loading="lazy"
+              />
+              <div class="post-thumb-badges">
                 <span class="badge">${escapeHtml(post.coverBadge || "BÀI VIẾT")}</span>
                 <span class="badge">${escapeHtml(post.readTime)}</span>
-              </div>
-              <div style="font-size: 12px; color: rgba(255,255,255,0.88); margin-top: 12px;">
-                ✍️ ${escapeHtml(post.author)} • ${escapeHtml(post.date)}
               </div>
             </div>
           </a>
 
           <div class="post-body">
             <div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">
+                ✍️ ${escapeHtml(post.author)} • ${escapeHtml(post.date)}
+              </div>
               <a href="post.html?id=${encodeURIComponent(post.id)}" style="text-decoration: none; color: inherit;">
-                <h3 class="card-title" style="font-size: 19px; margin-bottom: 10px;">
+                <h3 class="card-title" style="font-size: 18.5px; margin-bottom: 10px;">
                   ${escapeHtml(post.title)}
                 </h3>
               </a>
@@ -591,6 +618,13 @@
 
       <div class="single-post-layout">
         <article class="card" style="padding: 32px;">
+          <div class="post-thumb-wrap" style="border-radius: 14px; margin-bottom: 24px; border: 1px solid var(--border-default);">
+            <img
+              src="${escapeHtml(post.coverImage || "assets/covers/post-1.svg")}"
+              alt="${escapeHtml(post.title)}"
+              class="post-thumb-img"
+            />
+          </div>
           <div class="article-reader-body" id="articleMainContent">
             ${post.content}
           </div>
@@ -680,20 +714,29 @@
           (p) => `
           <article class="featured-post-card">
             <a href="post.html?id=${encodeURIComponent(p.id)}" style="text-decoration: none; color: inherit;">
-              <div class="post-cover-banner-sm" style="background: ${p.coverStyle || "var(--brand-gradient)"};">
-                <span class="badge" style="width: fit-content;">${escapeHtml(p.categoryLabel)}</span>
-                <div style="font-size: 12px; color: rgba(255,255,255,0.88); margin-top: 10px;">
-                  ✍️ ${escapeHtml(p.author)} • ${escapeHtml(p.readTime)}
+              <div class="post-thumb-wrap">
+                <img
+                  src="${escapeHtml(p.coverImage || "assets/covers/post-1.svg")}"
+                  alt="${escapeHtml(p.title)}"
+                  class="post-thumb-img"
+                  loading="lazy"
+                />
+                <div class="post-thumb-badges">
+                  <span class="badge">${escapeHtml(p.categoryLabel)}</span>
+                  <span class="badge">${escapeHtml(p.readTime)}</span>
                 </div>
               </div>
             </a>
             <div class="post-body">
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">
+                ✍️ ${escapeHtml(p.author)} • ${escapeHtml(p.date)}
+              </div>
               <a href="post.html?id=${encodeURIComponent(p.id)}" style="text-decoration: none; color: inherit;">
                 <h3 class="card-title" style="font-size: 18px;">${escapeHtml(p.title)}</h3>
               </a>
               <p class="card-summary">${escapeHtml(p.excerpt)}</p>
               <div class="card-footer">
-                <span style="font-size: 12px; color: var(--text-muted);">${escapeHtml(p.date)}</span>
+                <span style="font-size: 12px; color: var(--text-muted);">👁 ${p.views || 150} lượt đọc</span>
                 <a href="post.html?id=${encodeURIComponent(p.id)}" class="btn btn-secondary btn-sm">Đọc tiếp →</a>
               </div>
             </div>
@@ -703,6 +746,8 @@
         .join("");
     }
 
+    renderPostComments(post);
+
     window.addEventListener("scroll", () => {
       const bar = document.getElementById("readingProgressBar");
       if (!bar) return;
@@ -710,6 +755,133 @@
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
       bar.style.width = `${pct}%`;
+    });
+  }
+
+  function renderPostComments(post) {
+    const commentsContainer = document.getElementById("postCommentsSection");
+    if (!commentsContainer || !post) return;
+
+    const storedAll = JSON.parse(localStorage.getItem("tipsai_comments") || "{}");
+    const defaultList = (DATA.defaultComments && DATA.defaultComments[post.id]) || [];
+    const customList = storedAll[post.id] || [];
+    const allComments = [...customList, ...defaultList];
+
+    commentsContainer.innerHTML = `
+      <div class="comments-shell">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border-default);">
+          <div>
+            <span class="badge badge-purple" style="margin-bottom: 6px;">💬 THẢO LUẬN & HỎI ĐÁP CỘNG ĐỒNG</span>
+            <h2 style="font-family: var(--font-display); font-size: 22px; font-weight: 800;">
+              Bình luận về bài viết (${allComments.length})
+            </h2>
+          </div>
+          <a
+            href="https://github.com/iamtee999-sketch/tipsai/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary btn-sm"
+          >
+            🌐 Mở thảo luận trên GitHub →
+          </a>
+        </div>
+
+        <form id="postCommentForm" style="margin-bottom: 24px;">
+          <div class="comment-form-grid">
+            <input
+              type="text"
+              id="commentAuthorInput"
+              class="input-field"
+              placeholder="Tên của bạn (VD: Minh Tuấn)"
+              required
+            />
+            <input
+              type="text"
+              id="commentRoleInput"
+              class="input-field"
+              placeholder="Công việc / Vai trò (VD: Marketer, Developer, Sinh viên...)"
+            />
+          </div>
+          <textarea
+            id="commentContentInput"
+            class="comment-textarea"
+            placeholder="Chia sẻ trải nghiệm áp dụng của bạn hoặc đặt câu hỏi về bài viết này..."
+            required
+          ></textarea>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <span style="font-size: 12.5px; color: var(--text-muted);">
+              💡 Mẹo hay hoặc câu hỏi thực tế của bạn sẽ giúp ích cho cả cộng đồng.
+            </span>
+            <button type="submit" class="btn btn-primary btn-sm">
+              ✉️ Gửi bình luận
+            </button>
+          </div>
+        </form>
+
+        <div class="comments-list">
+          ${
+            allComments.length === 0
+              ? `<p style="color: var(--text-secondary); font-size: 14px;">Chưa có bình luận nào. Hãy là người đầu tiên chia sẻ góc nhìn của bạn!</p>`
+              : allComments
+                  .map(
+                    (c) => `
+                  <div class="comment-item">
+                    <div class="comment-avatar">${escapeHtml(c.avatar || c.author.slice(0, 2).toUpperCase())}</div>
+                    <div style="flex: 1;">
+                      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+                        <div>
+                          <strong style="color: var(--text-primary); font-size: 14.5px;">${escapeHtml(c.author)}</strong>
+                          <span class="badge badge-cyan" style="margin-left: 6px; font-size: 11px;">${escapeHtml(c.role || "Thành viên")}</span>
+                        </div>
+                        <span style="font-size: 12px; color: var(--text-muted);">${escapeHtml(c.date)}</span>
+                      </div>
+                      <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                        ${escapeHtml(c.content)}
+                      </p>
+                    </div>
+                  </div>
+                `
+                  )
+                  .join("")
+          }
+        </div>
+      </div>
+    `;
+
+    const form = document.getElementById("postCommentForm");
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const author = document.getElementById("commentAuthorInput").value.trim();
+      const role = document.getElementById("commentRoleInput").value.trim() || "Thành viên TipsAI";
+      const content = document.getElementById("commentContentInput").value.trim();
+      if (!author || !content) return;
+
+      const words = author.split(/\s+/);
+      const avatar =
+        words.length >= 2
+          ? (words[0][0] + words[words.length - 1][0]).toUpperCase()
+          : author.slice(0, 2).toUpperCase();
+
+      const now = new Date();
+      const dateStr = `${String(now.getDate()).padStart(2, "0")}/${String(now.getMonth() + 1).padStart(2, "0")}/${now.getFullYear()}`;
+
+      const newComment = {
+        id: `cmt-${Date.now()}`,
+        author,
+        role,
+        date: dateStr,
+        avatar,
+        content,
+        likes: 1
+      };
+
+      const latestStored = JSON.parse(localStorage.getItem("tipsai_comments") || "{}");
+      if (!latestStored[post.id]) latestStored[post.id] = [];
+      latestStored[post.id].unshift(newComment);
+      localStorage.setItem("tipsai_comments", JSON.stringify(latestStored));
+
+      showToast("🎉 Đã đăng bình luận của bạn thành công!");
+      renderPostComments(post);
     });
   }
 
@@ -999,6 +1171,228 @@
   // ==========================================================================
   // 7. KHO PROMPT ĐỘNG (prompts.html) & AI TOOLS (tools.html)
   // ==========================================================================
+  function renderVisualPromptBuilder() {
+    const container = document.getElementById("visualPromptBuilderSection");
+    if (!container || !DATA.visualPromptBuilder) return;
+
+    const builder = DATA.visualPromptBuilder;
+    container.innerHTML = `
+      <div class="visual-builder-shell">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="badge badge-cyan" style="margin-bottom: 6px;">🎛 MINI-TOOL • BỘ TẠO PROMPT TỰ ĐỘNG BẰNG TÍCH CHỌN</span>
+            <h2 style="font-family: var(--font-display); font-size: 24px; font-weight: 800;">
+              Lắp Ráp Master Prompt Trong 10 Giây (Không Cần Gõ Dài)
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 4px;">
+              Chỉ cần chọn Vai trò, Nhiệm vụ, Định dạng đầu ra và đánh dấu các Rào chắn chống ảo giác — hệ thống sẽ tự động xuất bản Prompt chuẩn cấu trúc XML/C.R.A.F.T.
+            </p>
+          </div>
+          <button type="button" class="btn btn-primary" id="copyVisualBuilderBtn">
+            📋 Sao chép Master Prompt
+          </button>
+        </div>
+
+        <div class="builder-controls-grid">
+          <div class="builder-field">
+            <label class="builder-label" for="vbRoleSelect">1. Chọn Vai trò chuyên gia (Role)</label>
+            <select id="vbRoleSelect" class="select-field">
+              ${builder.roles
+                .map((r) => `<option value="${escapeHtml(r.id)}">${escapeHtml(r.label)}</option>`)
+                .join("")}
+            </select>
+          </div>
+
+          <div class="builder-field">
+            <label class="builder-label" for="vbTaskSelect">2. Chọn Loại tác vụ (Task)</label>
+            <select id="vbTaskSelect" class="select-field">
+              ${builder.tasks
+                .map((t) => `<option value="${escapeHtml(t.id)}">${escapeHtml(t.label)}</option>`)
+                .join("")}
+            </select>
+          </div>
+
+          <div class="builder-field full-width">
+            <label class="builder-label" for="vbTopicInput">3. Nhập Chủ đề / Yêu cầu cụ thể của bạn</label>
+            <input
+              type="text"
+              id="vbTopicInput"
+              class="input-field"
+              value="Xây dựng kế hoạch nội dung & ứng dụng AI giúp tăng gấp đôi hiệu suất làm việc"
+              placeholder="${escapeHtml(builder.tasks[0]?.placeholder || "Nhập yêu cầu cụ thể...")}"
+            />
+          </div>
+
+          <div class="builder-field">
+            <label class="builder-label" for="vbFormatSelect">4. Định dạng đầu ra (Output Format)</label>
+            <select id="vbFormatSelect" class="select-field">
+              ${builder.formats
+                .map((f) => `<option value="${escapeHtml(f.id)}">${escapeHtml(f.label)}</option>`)
+                .join("")}
+            </select>
+          </div>
+
+          <div class="builder-field">
+            <label class="builder-label" for="vbToneSelect">5. Giọng văn & Phong cách (Tone)</label>
+            <select id="vbToneSelect" class="select-field">
+              ${builder.tones
+                .map((t) => `<option value="${escapeHtml(t.id)}">${escapeHtml(t.label)}</option>`)
+                .join("")}
+            </select>
+          </div>
+
+          <div class="builder-field full-width">
+            <span class="builder-label">6. Tích chọn Rào chắn chất lượng (Guardrails)</span>
+            <div class="guardrails-grid">
+              ${builder.guardrails
+                .map(
+                  (g) => `
+                <label class="guardrail-check">
+                  <input
+                    type="checkbox"
+                    class="vb-guardrail-cb"
+                    value="${escapeHtml(g.id)}"
+                    ${g.checked ? "checked" : ""}
+                  />
+                  <span>${escapeHtml(g.label)}</span>
+                </label>
+              `
+                )
+                .join("")}
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 18px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 12.5px; font-weight: 700; color: var(--brand-primary);">
+              ✦ BẢN XEM TRƯỚC MASTER PROMPT (TỰ ĐỘNG CẬP NHẬT):
+            </span>
+            <span style="font-size: 12px; color: var(--text-muted);">Dán trực tiếp vào ChatGPT, Claude hoặc Gemini</span>
+          </div>
+          <div class="live-prompt-output" id="vbCompiledOutput" style="margin-bottom: 0;"></div>
+        </div>
+      </div>
+    `;
+
+    function updateVisualPromptOutput() {
+      const roleId = document.getElementById("vbRoleSelect")?.value;
+      const taskId = document.getElementById("vbTaskSelect")?.value;
+      const topicVal = document.getElementById("vbTopicInput")?.value.trim();
+      const formatId = document.getElementById("vbFormatSelect")?.value;
+      const toneId = document.getElementById("vbToneSelect")?.value;
+
+      const roleObj = builder.roles.find((r) => r.id === roleId) || builder.roles[0];
+      const taskObj = builder.tasks.find((t) => t.id === taskId) || builder.tasks[0];
+      const formatObj = builder.formats.find((f) => f.id === formatId) || builder.formats[0];
+      const toneObj = builder.tones.find((t) => t.id === toneId) || builder.tones[0];
+
+      const checkedGuardrails = Array.from(container.querySelectorAll(".vb-guardrail-cb:checked"))
+        .map((cb) => builder.guardrails.find((g) => g.id === cb.value)?.promptText)
+        .filter(Boolean);
+
+      const lines = [
+        `<vai_tro>\n${roleObj.promptText}\n</vai_tro>`,
+        `\n<nhiem_vu_chinh>\nLoại tác vụ: ${taskObj.label}\nChủ đề / Yêu cầu cụ thể: "${topicVal || "[Nhập yêu cầu cụ thể của bạn tại đây]"}"\n</nhiem_vu_chinh>`,
+        `\n<dinh_dang_va_giong_van>\n- Định dạng: ${formatObj.promptText}\n- Phong cách: ${toneObj.promptText}\n</dinh_dang_va_giong_van>`
+      ];
+
+      if (checkedGuardrails.length > 0) {
+        lines.push(
+          `\n<rao_chan_bat_buoc>\n${checkedGuardrails.map((item, i) => `${i + 1}. ${item}`).join("\n")}\n</rao_chan_bat_buoc>`
+        );
+      }
+
+      const outEl = document.getElementById("vbCompiledOutput");
+      if (outEl) outEl.textContent = lines.join("\n");
+    }
+
+    container.querySelectorAll("select, input").forEach((el) => {
+      el.addEventListener("input", updateVisualPromptOutput);
+      el.addEventListener("change", () => {
+        if (el.id === "vbTaskSelect") {
+          const tObj = builder.tasks.find((t) => t.id === el.value);
+          const topicInput = document.getElementById("vbTopicInput");
+          if (tObj && topicInput) topicInput.placeholder = tObj.placeholder;
+        }
+        updateVisualPromptOutput();
+      });
+    });
+
+    document.getElementById("copyVisualBuilderBtn")?.addEventListener("click", () => {
+      const outEl = document.getElementById("vbCompiledOutput");
+      if (outEl) {
+        copyToClipboard(outEl.textContent, "⚡ Đã sao chép Master Prompt từ Bộ Tạo Tự Động!");
+      }
+    });
+
+    updateVisualPromptOutput();
+  }
+
+  function renderAiLeaderboard() {
+    const container = document.getElementById("aiLeaderboardSection");
+    if (!container || !DATA.aiLeaderboard) return;
+
+    container.innerHTML = `
+      <div class="leaderboard-shell">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="badge badge-purple" style="margin-bottom: 6px;">🏆 BẢNG XẾP HẠNG THỰC CHIẾN 2026</span>
+            <h2 style="font-family: var(--font-display); font-size: 24px; font-weight: 800;">
+              Dùng AI Nào Cho Việc Gì? (Bảng Phân Vai Nhanh)
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 4px;">
+              Đừng dùng duy nhất 1 công cụ cho mọi việc. Đây là bảng tổng hợp công cụ Số 1 cho từng nhu cầu thực tế được cộng đồng bình chọn.
+            </p>
+          </div>
+          <span class="badge badge-green">✓ Đã kiểm chứng thực tế</span>
+        </div>
+
+        <div class="leaderboard-table-wrap">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th>Nhu cầu công việc</th>
+                <th>🥇 Số 1 Khuyên dùng</th>
+                <th>🥈 Lựa chọn thay thế</th>
+                <th>🆓 Tốt nhất Miễn phí</th>
+                <th>💡 Quy trình kết hợp chuyên gia</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${DATA.aiLeaderboard
+                .map(
+                  (row) => `
+                <tr>
+                  <td>
+                    <strong style="color: var(--text-primary); font-size: 14px;">${escapeHtml(row.task)}</strong>
+                  </td>
+                  <td>
+                    <span class="badge badge-purple" style="margin-bottom: 4px;">👑 ${escapeHtml(row.winner)}</span>
+                    <div style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px;">
+                      ${escapeHtml(row.winnerReason)}
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge-cyan">${escapeHtml(row.runnerUp)}</span>
+                  </td>
+                  <td>
+                    <span class="badge badge-green">${escapeHtml(row.bestFree)}</span>
+                  </td>
+                  <td style="font-size: 13px; color: var(--text-secondary);">
+                    ${escapeHtml(row.proWorkflow)}
+                  </td>
+                </tr>
+              `
+                )
+                .join("")}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  }
+
   function renderPromptsGrid() {
     const grid = document.getElementById("promptsGrid");
     if (!grid) return;
@@ -1790,8 +2184,10 @@
       renderShortcutAppTabs();
       syncOsButtons();
     } else if (page === "prompts") {
+      renderVisualPromptBuilder();
       renderPromptsGrid();
     } else if (page === "tools") {
+      renderAiLeaderboard();
       renderToolCategoryTabs();
       renderToolsGrid();
     }

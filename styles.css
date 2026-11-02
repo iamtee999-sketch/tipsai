@@ -1661,6 +1661,255 @@ kbd.keycap {
 }
 
 /* ==========================================================================
+   POST THUMBNAIL IMAGES & VISUAL COVERS
+   ========================================================================== */
+.post-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--surface-3);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.post-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-smooth) var(--ease-out);
+}
+
+.featured-post-card:hover .post-thumb-img {
+  transform: scale(1.03);
+}
+
+.post-thumb-badges {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.post-thumb-badges .badge {
+  background: rgba(15, 23, 42, 0.78);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.post-compact-row {
+  display: grid;
+  grid-template-columns: 136px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.post-compact-thumb {
+  width: 136px;
+  height: 92px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  flex-shrink: 0;
+}
+
+.post-compact-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   1-CLICK VISUAL PROMPT BUILDER (prompts.html)
+   ========================================================================== */
+.visual-builder-shell {
+  background: var(--hero-shell-bg);
+  border: 1px solid var(--border-ai);
+  border-radius: var(--radius-hero);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 32px;
+}
+
+.builder-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.builder-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.builder-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.builder-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.guardrails-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.guardrail-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-default);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-primary);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.guardrail-check:hover {
+  border-color: var(--brand-primary);
+}
+
+.guardrail-check input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: var(--brand-primary);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   AI LEADERBOARD MATRIX (tools.html)
+   ========================================================================== */
+.leaderboard-shell {
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-hero);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 30px;
+}
+
+.leaderboard-table-wrap {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  border: 1px solid var(--border-default);
+  padding: 13px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.leaderboard-table th {
+  background: var(--surface-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.leaderboard-table tr:hover td {
+  background: var(--surface-2);
+}
+
+/* ==========================================================================
+   ARTICLE COMMENTS & COMMUNITY HUB (post.html & Footer)
+   ========================================================================== */
+.comments-shell {
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 28px;
+}
+
+.comment-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.comment-textarea {
+  width: 100%;
+  min-height: 92px;
+  padding: 12px 14px;
+  border-radius: var(--radius-input);
+  background: var(--surface-2);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  margin-bottom: 12px;
+}
+
+.comment-textarea:focus {
+  border-color: var(--brand-primary);
+  background: var(--surface-1);
+}
+
+.comments-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.comment-item {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-default);
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand-gradient);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1120px) {
@@ -1700,8 +1949,16 @@ kbd.keycap {
   .cards-grid-3,
   .cards-grid-2,
   .shortcuts-grid,
-  .compare-grid {
+  .compare-grid,
+  .builder-controls-grid,
+  .guardrails-grid,
+  .comment-form-grid,
+  .post-compact-row {
     grid-template-columns: 1fr;
+  }
+  .post-compact-thumb {
+    width: 100%;
+    height: 150px;
   }
   .filter-toolbar {
     flex-direction: column;

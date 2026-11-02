@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="800" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E1040"/>
+      <stop offset="50%" stop-color="#3B1D8F"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" fill="url(#bg1)"/>
+  <circle cx="680" cy="90" r="160" fill="#00D4FF" fill-opacity="0.18"/>
+  <circle cx="120" cy="340" r="180" fill="#7C5CFC" fill-opacity="0.22"/>
+  <!-- Visual Diagram: Context Stack Layers -->
+  <rect x="440" y="65" width="310" height="72" rx="14" fill="url(#card1)" stroke="#38BDF8" stroke-opacity="0.5"/>
+  <text x="464" y="96" fill="#38BDF8" font-family="monospace" font-size="13" font-weight="bold">LAYER 01 // SYSTEM RULES</text>
+  <text x="464" y="118" fill="#E2E8F0" font-family="sans-serif" font-size="14">Role + Anti-Patterns + Guardrails</text>
+
+  <rect x="440" y="155" width="310" height="72" rx="14" fill="url(#card1)" stroke="#A78BFA" stroke-opacity="0.5"/>
+  <text x="464" y="186" fill="#C4B5FD" font-family="monospace" font-size="13" font-weight="bold">LAYER 02 // KNOWLEDGE BASE</text>
+  <text x="464" y="208" fill="#E2E8F0" font-family="sans-serif" font-size="14">AGENTS.md + Few-Shot Examples</text>
+
+  <rect x="440" y="245" width="310" height="72" rx="14" fill="url(#card1)" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="464" y="276" fill="#6EE7B7" font-family="monospace" font-size="13" font-weight="bold">LAYER 03 // XML INTENT</text>
+  <text x="464" y="298" fill="#E2E8F0" font-family="sans-serif" font-size="14">&lt;context&gt; + &lt;task&gt; → +340% Accuracy</text>
+
+  <rect x="48" y="65" width="170" height="32" rx="16" fill="#00D4FF" fill-opacity="0.2"/>
+  <text x="66" y="86" fill="#7DD3FC" font-family="sans-serif" font-size="13" font-weight="bold">CONTEXT ENGINEERING</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="800" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="50%" stop-color="#3B0764"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" fill="url(#bg3)"/>
+  <!-- 4 Model Quadrant Pills -->
+  <rect x="430" y="60" width="155" height="115" rx="14" fill="#FFFFFF" fill-opacity="0.1" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="450" y="96" fill="#6EE7B7" font-family="sans-serif" font-size="16" font-weight="bold">ChatGPT o3/4o</text>
+  <text x="450" y="122" fill="#E2E8F0" font-family="sans-serif" font-size="12">Đa năng, Voice, Ảnh</text>
+  <text x="450" y="148" fill="#FDE047" font-family="monospace" font-size="13">★ 4.9 / 5.0</text>
+
+  <rect x="600" y="60" width="155" height="115" rx="14" fill="#FFFFFF" fill-opacity="0.1" stroke="#C084FC" stroke-opacity="0.5"/>
+  <text x="620" y="96" fill="#D8B4FE" font-family="sans-serif" font-size="16" font-weight="bold">Claude 3.7</text>
+  <text x="620" y="122" fill="#E2E8F0" font-family="sans-serif" font-size="12">Code &amp; Viết số 1</text>
+  <text x="620" y="148" fill="#FDE047" font-family="monospace" font-size="13">★ 4.9 / 5.0</text>
+
+  <rect x="430" y="190" width="155" height="115" rx="14" fill="#FFFFFF" fill-opacity="0.1" stroke="#38BDF8" stroke-opacity="0.5"/>
+  <text x="450" y="226" fill="#7DD3FC" font-family="sans-serif" font-size="16" font-weight="bold">Gemini 2M</text>
+  <text x="450" y="252" fill="#E2E8F0" font-family="sans-serif" font-size="12">PDF dài &amp; Video</text>
+  <text x="450" y="278" fill="#FDE047" font-family="monospace" font-size="13">★ 4.8 / 5.0</text>
+
+  <rect x="600" y="190" width="155" height="115" rx="14" fill="#FFFFFF" fill-opacity="0.1" stroke="#2DD4BF" stroke-opacity="0.5"/>
+  <text x="620" y="226" fill="#5EEAD4" font-family="sans-serif" font-size="16" font-weight="bold">Perplexity</text>
+  <text x="620" y="252" fill="#E2E8F0" font-family="sans-serif" font-size="12">Tra cứu có nguồn</text>
+  <text x="620" y="278" fill="#FDE047" font-family="monospace" font-size="13">★ 4.8 / 5.0</text>
+</svg>
